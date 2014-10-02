@@ -41,3 +41,102 @@ Processing by TournamentsController#index as HTML
   Rendered tournaments/index.html.erb within layouts/application (1.9ms)
   Rendered layouts/_nav.html.erb (1.4ms)
 Completed 200 OK in 99ms (Views: 96.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 18:33:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TournamentsController#index as HTML
+  [1m[35mTournament Load (0.3ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered tournaments/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_nav.html.erb (7.5ms)
+Completed 200 OK in 196ms (Views: 178.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 18:33:54 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 18:33:54 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 18:33:54 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 18:33:54 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 18:33:54 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 18:33:54 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 18:33:54 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 18:33:54 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 18:33:54 -0700
+  [1m[36mPlayer Load (1.9ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DbCleanup (20141002013609)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DbCleanup (20141002013609)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "players" ADD "totalGames" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "players" ADD "totalWins" integer DEFAULT 0 NOT NULL
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DbCleanup (20141002013609)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "players" ADD "totalGames" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "players" ADD "totalWins" integer DEFAULT 0 NOT NULL
+  [1m[36m (1.2ms)[0m  [1mCREATE TEMPORARY TABLE "atournaments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "point" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "tournaments"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "tournaments"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "tournaments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "point" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "atournaments"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "atournaments"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "tournaments" ADD "totalPlayers" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "tournaments" ADD "totalMatches" integer DEFAULT 0 NOT NULL
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141002013609"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_players_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_players_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_players_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_players_on_email' AND type='index'
+[0m
+  [1m[36mTournament Load (2.4ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT "players".* FROM "players"
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  [1m[35mTournament Load (0.4ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m

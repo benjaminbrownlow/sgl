@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930000828) do
+ActiveRecord::Schema.define(version: 20141002013609) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -47,16 +47,20 @@ ActiveRecord::Schema.define(version: 20140930000828) do
     t.string   "name"
     t.string   "evetag"
     t.boolean  "admin",                  default: false
+    t.integer  "totalGames",             default: 0,     null: false
+    t.integer  "totalWins",              default: 0,     null: false
   end
 
   add_index "players", ["email"], name: "index_players_on_email", unique: true
   add_index "players", ["reset_password_token"], name: "index_players_on_reset_password_token", unique: true
 
   create_table "tournaments", force: true do |t|
-    t.string   "game"
+    t.string   "title"
     t.integer  "point"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "totalPlayers", default: 0, null: false
+    t.integer  "totalMatches", default: 0, null: false
   end
 
 end
