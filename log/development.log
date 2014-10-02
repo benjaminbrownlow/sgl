@@ -467,3 +467,894 @@ Migrating to AddSignUpDatesToTournaments (20141002022022)
             FROM sqlite_temp_master
             WHERE name='index_players_on_email' AND type='index'
 
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:37:18 -0700
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by TournamentsController#index as HTML
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered tournaments/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 98ms (Views: 95.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:37:19 -0700
+Processing by TournamentsController#index as HTML
+  [1m[35mTournament Load (0.2ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered tournaments/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 106ms (Views: 104.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 19:37:19 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 19:37:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 19:37:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 19:37:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 19:37:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 19:37:19 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 19:37:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 19:37:20 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 19:37:20 -0700
+
+
+Started GET "/tournaments/new" for 127.0.0.1 at 2014-10-01 19:37:51 -0700
+Processing by TournamentsController#new as HTML
+  Rendered tournaments/_form.html.erb (10.8ms)
+  Rendered tournaments/new.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 114ms (Views: 112.0ms | ActiveRecord: 0.4ms)
+  [1m[36mTournament Load (2.5ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+
+
+Started GET "/tournaments/new" for 127.0.0.1 at 2014-10-01 19:40:46 -0700
+Processing by TournamentsController#new as HTML
+  Rendered tournaments/_form.html.erb (28.7ms)
+  Rendered tournaments/new.html.erb within layouts/application (30.0ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (undefined method `datefield' for #<ActionView::Helpers::FormBuilder:0x007ffcf76d10b8>):
+    23: 
+    24:   <div class="field">
+    25:     <%= f.label :signUpDate %><br>
+    26:     <%= f.datefield :signUpDate %>
+    27:   </div>
+    28: 
+    29:   <div class="field">
+  app/views/tournaments/_form.html.erb:26:in `block in _app_views_tournaments__form_html_erb___4196124229313357686_70362229853740'
+  app/views/tournaments/_form.html.erb:1:in `_app_views_tournaments__form_html_erb___4196124229313357686_70362229853740'
+  app/views/tournaments/new.html.erb:3:in `_app_views_tournaments_new_html_erb___843814182972950074_70362219904800'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.4ms)
+
+
+Started GET "/tournaments/new" for 127.0.0.1 at 2014-10-01 19:44:00 -0700
+Processing by TournamentsController#new as HTML
+  Rendered tournaments/_form.html.erb (6.1ms)
+  Rendered tournaments/new.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 106ms (Views: 104.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 19:44:00 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 19:44:00 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 19:44:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 19:44:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 19:44:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 19:44:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 19:44:00 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 19:44:00 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 19:44:00 -0700
+
+
+Started POST "/tournaments" for 127.0.0.1 at 2014-10-01 19:44:55 -0700
+Processing by TournamentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wYt136O8jWuW5Qcxa8u0zTCiugqfmLbh0MDcqmxKEyg=", "tournament"=>{"title"=>"Battle of Asakai", "description"=>"Epic 1v1 Eve Online Tournament", "signUpDate"=>"12/13/14", "gameDate"=>"12/15/14"}, "commit"=>"Create Tournament"}
+Unpermitted parameters: title, description, signUpDate, gameDate
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "tournaments" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-10-02 02:44:55.785666"], ["updated_at", "2014-10-02 02:44:55.785666"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tournaments/1
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/tournaments/1" for 127.0.0.1 at 2014-10-01 19:44:55 -0700
+Processing by TournamentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTournament Load (0.3ms)[0m  SELECT  "tournaments".* FROM "tournaments"  WHERE "tournaments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tournaments/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `game' for #<Tournament:0x007ffcf465ec78>):
+    2: 
+    3: <p>
+    4:   <strong>Game:</strong>
+    5:   <%= @tournament.game %>
+    6: </p>
+    7: 
+    8: <p>
+  app/views/tournaments/show.html.erb:5:in `_app_views_tournaments_show_html_erb___987033618135783037_70362204381780'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.0ms)
+
+
+Started GET "/tournaments/1" for 127.0.0.1 at 2014-10-01 19:45:50 -0700
+Processing by TournamentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT  "tournaments".* FROM "tournaments"  WHERE "tournaments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tournaments/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 114ms (Views: 111.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 19:45:50 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 19:45:50 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 19:45:50 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 19:45:50 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 19:45:50 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 19:45:50 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 19:45:50 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 19:45:50 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 19:45:50 -0700
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:45:53 -0700
+Processing by TournamentsController#index as HTML
+  [1m[35mTournament Load (0.2ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered tournaments/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `game' for #<Tournament:0x007ffcf62fdf00>):
+    12:   <tbody>
+    13:     <% @tournaments.each do |tournament| %>
+    14:       <tr>
+    15:         <td><%= tournament.game %></td>
+    16:         <td><%= tournament.point %></td>
+    17:         <td><%= link_to 'Show', tournament %></td>
+    18:         <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>
+  app/views/tournaments/index.html.erb:15:in `block in _app_views_tournaments_index_html_erb___4081047356459756703_70362219245420'
+  app/views/tournaments/index.html.erb:13:in `_app_views_tournaments_index_html_erb___4081047356459756703_70362219245420'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.9ms)
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:45:53 -0700
+Processing by TournamentsController#index as HTML
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered tournaments/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `game' for #<Tournament:0x007ffcf7302a18>):
+    12:   <tbody>
+    13:     <% @tournaments.each do |tournament| %>
+    14:       <tr>
+    15:         <td><%= tournament.game %></td>
+    16:         <td><%= tournament.point %></td>
+    17:         <td><%= link_to 'Show', tournament %></td>
+    18:         <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>
+  app/views/tournaments/index.html.erb:15:in `block in _app_views_tournaments_index_html_erb___4081047356459756703_70362202645140'
+  app/views/tournaments/index.html.erb:13:in `_app_views_tournaments_index_html_erb___4081047356459756703_70362202645140'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.5ms)
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:45:55 -0700
+Processing by TournamentsController#index as HTML
+  [1m[35mTournament Load (0.2ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered tournaments/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `game' for #<Tournament:0x007ffcf705bf80>):
+    12:   <tbody>
+    13:     <% @tournaments.each do |tournament| %>
+    14:       <tr>
+    15:         <td><%= tournament.game %></td>
+    16:         <td><%= tournament.point %></td>
+    17:         <td><%= link_to 'Show', tournament %></td>
+    18:         <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>
+  app/views/tournaments/index.html.erb:15:in `block in _app_views_tournaments_index_html_erb___4081047356459756703_70362202645140'
+  app/views/tournaments/index.html.erb:13:in `_app_views_tournaments_index_html_erb___4081047356459756703_70362202645140'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.9ms)
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:45:58 -0700
+Processing by TournamentsController#index as HTML
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered tournaments/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `game' for #<Tournament:0x007ffcf464dc48>):
+    12:   <tbody>
+    13:     <% @tournaments.each do |tournament| %>
+    14:       <tr>
+    15:         <td><%= tournament.game %></td>
+    16:         <td><%= tournament.point %></td>
+    17:         <td><%= link_to 'Show', tournament %></td>
+    18:         <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>
+  app/views/tournaments/index.html.erb:15:in `block in _app_views_tournaments_index_html_erb___4081047356459756703_70362219245420'
+  app/views/tournaments/index.html.erb:13:in `_app_views_tournaments_index_html_erb___4081047356459756703_70362219245420'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.5ms)
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:45:58 -0700
+Processing by TournamentsController#index as HTML
+  [1m[35mTournament Load (0.2ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered tournaments/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `game' for #<Tournament:0x007ffcf41be100>):
+    12:   <tbody>
+    13:     <% @tournaments.each do |tournament| %>
+    14:       <tr>
+    15:         <td><%= tournament.game %></td>
+    16:         <td><%= tournament.point %></td>
+    17:         <td><%= link_to 'Show', tournament %></td>
+    18:         <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>
+  app/views/tournaments/index.html.erb:15:in `block in _app_views_tournaments_index_html_erb___4081047356459756703_70362202645140'
+  app/views/tournaments/index.html.erb:13:in `_app_views_tournaments_index_html_erb___4081047356459756703_70362202645140'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.2ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.6ms)
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:47:35 -0700
+Processing by TournamentsController#index as HTML
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered tournaments/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 103ms (Views: 102.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 19:47:35 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 19:47:35 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:35 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 19:47:35 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:35 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:35 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:35 -0700
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:47:38 -0700
+Processing by TournamentsController#index as HTML
+  [1m[35mTournament Load (0.2ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered tournaments/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 116ms (Views: 115.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 19:47:38 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 19:47:38 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:38 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:38 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:38 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:38 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:38 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:38 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 19:47:38 -0700
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:47:39 -0700
+Processing by TournamentsController#index as HTML
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered tournaments/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 98ms (Views: 96.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tournaments/1" for 127.0.0.1 at 2014-10-01 19:47:41 -0700
+Processing by TournamentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTournament Load (0.1ms)[0m  SELECT  "tournaments".* FROM "tournaments"  WHERE "tournaments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tournaments/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 104ms (Views: 102.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:47:43 -0700
+Processing by TournamentsController#index as HTML
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered tournaments/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 97ms (Views: 95.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/tournaments/1" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+Processing by TournamentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wYt136O8jWuW5Qcxa8u0zTCiugqfmLbh0MDcqmxKEyg=", "id"=>"1"}
+  [1m[35mTournament Load (0.2ms)[0m  SELECT  "tournaments".* FROM "tournaments"  WHERE "tournaments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "tournaments" WHERE "tournaments"."id" = ?  [["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tournaments
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+Processing by TournamentsController#index as HTML
+  [1m[35mTournament Load (0.2ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered tournaments/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 123ms (Views: 121.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 19:47:47 -0700
+
+
+Started GET "/tournaments/new" for 127.0.0.1 at 2014-10-01 19:47:51 -0700
+Processing by TournamentsController#new as HTML
+  Rendered tournaments/_form.html.erb (4.2ms)
+  Rendered tournaments/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 99ms (Views: 98.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tournaments" for 127.0.0.1 at 2014-10-01 19:48:16 -0700
+Processing by TournamentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wYt136O8jWuW5Qcxa8u0zTCiugqfmLbh0MDcqmxKEyg=", "tournament"=>{"title"=>"Battle of Asakai", "description"=>"Epic 1v1 EVE Online Tournament.", "signUpDate"=>"1/12/15", "gameDate"=>"1/15/15"}, "commit"=>"Create Tournament"}
+Unpermitted parameters: title, description, signUpDate, gameDate
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tournaments" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-10-02 02:48:16.948619"], ["updated_at", "2014-10-02 02:48:16.948619"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tournaments/2
+Completed 302 Found in 12ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/tournaments/2" for 127.0.0.1 at 2014-10-01 19:48:16 -0700
+Processing by TournamentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTournament Load (0.2ms)[0m  SELECT  "tournaments".* FROM "tournaments"  WHERE "tournaments"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered tournaments/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 108ms (Views: 105.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 19:48:17 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 19:48:17 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 19:48:17 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 19:48:17 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 19:48:17 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 19:48:17 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 19:48:17 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 19:48:17 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 19:48:17 -0700
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:48:19 -0700
+Processing by TournamentsController#index as HTML
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered tournaments/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 95ms (Views: 94.0ms | ActiveRecord: 0.2ms)
+  [1m[35mTournament Load (0.8ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  [1m[36mTournament Load (0.3ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  [1m[35mTournament Load (0.2ms)[0m  SELECT  "tournaments".* FROM "tournaments"   ORDER BY "tournaments"."id" ASC LIMIT 1
+  [1m[36mTournament Load (0.3ms)[0m  [1mSELECT  "tournaments".* FROM "tournaments"   ORDER BY "tournaments"."id" ASC LIMIT 1[0m
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:53:13 -0700
+Processing by TournamentsController#index as HTML
+  [1m[35mTournament Load (0.4ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered tournaments/index.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 127ms (Views: 123.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 19:53:13 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 19:53:13 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:13 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:13 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:13 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:13 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:13 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:13 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 19:53:13 -0700
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:53:15 -0700
+Processing by TournamentsController#index as HTML
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered tournaments/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 116ms (Views: 115.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 19:53:15 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:15 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 19:53:15 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:15 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:15 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:15 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:15 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:15 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 19:53:15 -0700
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "tournaments" SET "description" = ?, "gameDate" = ?, "signUpDate" = ?, "title" = ?, "updated_at" = ? WHERE "tournaments"."id" = 2[0m  [["description", "Epic 1v1 EVE Online Tournament"], ["gameDate", nil], ["signUpDate", "0001-12-15 00:00:00.000000"], ["title", "Battle of Asakai"], ["updated_at", "2014-10-02 02:53:20.757431"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-01 19:53:23 -0700
+Processing by TournamentsController#index as HTML
+  [1m[35mTournament Load (0.4ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered tournaments/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 101ms (Views: 98.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-01 19:53:23 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-01 19:53:23 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:23 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:23 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:23 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:23 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:23 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-01 19:53:23 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-01 19:53:23 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-01 19:55:03 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 100ms (Views: 99.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-01 19:56:39 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (16.7ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined local variable or method `tournament' for #<#<Class:0x007ffcf4546110>:0x007ffcf6476260>):
+    1: <h1><%= tournament.title %></h1>
+    2: <p><%= tournament.description %></p>
+    3: 
+    4: <button> Sign Up</button>
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362220176100'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-01 19:56:54 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <h1><%= @tournament.title %></h1>
+    2: <p><%= @tournament.description %></p>
+    3: 
+    4: <button> Sign Up</button>
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362219428660'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-01 19:57:39 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% @tournaments.each do |tournament| %>
+    2: 	<h1><%= @tournament.title %></h1>
+    3: 	<p><%= @tournament.description %></p>
+    4: <% end %>
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362227720480'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-01 19:58:24 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% @tournaments.each do |tournament| %>
+    2:   <tr>
+    3:     <td><%= tournament.title %></td>
+    4:     <td><%= tournament.description %></td>
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362218469940'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-01 20:01:15 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% @tournaments.each do |tournament| %>
+    2: 	<h1><%= @tournament.title %></h1>
+    3: 	<p><%= @tournament.description %></p>
+    4: <% end %>
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362203824360'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-01 20:03:46 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: 
+    2: 	<h1><%= @tournament.title %></h1>
+    3: 	<p><%= @tournament.description %></p>
+    4: 
+    5: <button> Sign Up</button>
+  app/views/pages/home.html.erb:2:in `_app_views_pages_home_html_erb___3460526782261742700_70362229654140'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-01 20:05:01 -0700
+Processing by PagesController#home as HTML
+  [1m[36mTournament Load (0.5ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered pages/home.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <% @tournaments.each do |tournament| %>
+    2: 	<h1><%= @tournament.title %></h1>
+    3: 	<p><%= @tournament.description %></p>
+    4: <% end %>
+    5: <button> Sign Up</button>
+  app/views/pages/home.html.erb:2:in `block in _app_views_pages_home_html_erb___3460526782261742700_70362229054120'
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362229054120'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 09:51:45 -0700
+Processing by PagesController#home as HTML
+  [1m[35mTournament Load (0.4ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered pages/home.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <% @tournaments.each do |tournament| %>
+    2: 	<h1><%= @tournament.title %></h1>
+    3: 	<p><%= @tournament.description %></p>
+    4: <% end %>
+    5: <button> Sign Up</button>
+  app/views/pages/home.html.erb:2:in `block in _app_views_pages_home_html_erb___3460526782261742700_70362229054120'
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362229054120'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 09:55:26 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% @tournaments.each do |tournament| %>
+    2: 	<h1><%= @tournament.title %></h1>
+    3: 	<p><%= @tournament.description %></p>
+    4: <% end %>
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362229054120'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.4ms)
+  [1m[36mTournament Load (0.3ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 10:00:14 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% @tournaments.each do |tournament| %>
+    2: 	<h1><%= @tournament.title %></h1>
+    3: 	<p><%= @tournament.description %></p>
+    4: <% end %>
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362229054120'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 10:01:14 -0700
+Processing by PagesController#home as HTML
+  [1m[36mTournament Load (0.6ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered pages/home.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <% @tournaments.each do |tournament| %>
+    2: 	<h1><%= @tournament.title %></h1>
+    3: 	<p><%= @tournament.description %></p>
+    4: <% end %>
+    5: <button> Sign Up</button>
+  app/views/pages/home.html.erb:2:in `block in _app_views_pages_home_html_erb___3460526782261742700_70362229054120'
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362229054120'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.6ms)
+  [1m[35mTournament Load (0.3ms)[0m  SELECT "tournaments".* FROM "tournaments"
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 10:03:49 -0700
+Processing by PagesController#home as HTML
+  [1m[35mTournament Load (0.2ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered pages/home.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <% @tournaments.each do |tournament| %>
+    2: 	<h1><%= @tournament.title %></h1>
+    3: 	<p><%= @tournament.description %></p>
+    4: <% end %>
+    5: <button> Sign Up</button>
+  app/views/pages/home.html.erb:2:in `block in _app_views_pages_home_html_erb___3460526782261742700_70362229054120'
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362229054120'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 10:04:58 -0700
+Processing by PagesController#home as HTML
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT "tournaments".* FROM "tournaments"[0m
+  Rendered pages/home.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <% @tournaments.each do |tournament| %>
+    2: 	<h1><%= @tournament.id %></h1>
+    3: 	
+    4: <% end %>
+    5: <button> Sign Up</button>
+  app/views/pages/home.html.erb:2:in `block in _app_views_pages_home_html_erb___3460526782261742700_70362228628880'
+  app/views/pages/home.html.erb:1:in `_app_views_pages_home_html_erb___3460526782261742700_70362228628880'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 10:05:09 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: 
+    2: 	<h1><%= @tournament.id %></h1>
+    3: 	
+    4: 
+    5: <button> Sign Up</button>
+  app/views/pages/home.html.erb:2:in `_app_views_pages_home_html_erb___3460526782261742700_70362220100300'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.6ms)

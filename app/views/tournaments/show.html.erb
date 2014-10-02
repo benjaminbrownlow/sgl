@@ -1,13 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Game:</strong>
-  <%= @tournament.game %>
+  <strong>Title:</strong>
+  <%= @tournament.title %>
 </p>
 
 <p>
-  <strong>Point:</strong>
-  <%= @tournament.point %>
+  <strong>Description:</strong>
+  <%= @tournament.description %>
+</p>
+
+<p>
+  <strong>Sign Up Date:</strong>
+  <%= @tournament.signUpDate %>
+</p>
+
+<p>
+  <strong>Tournament Date:</strong>
+  <%= @tournament.gameDate %>
 </p>
 
 <%= link_to 'Edit', edit_tournament_path(@tournament) %> |
