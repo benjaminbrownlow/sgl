@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tournaments
+
   devise_for :players
   root 'pages#home'
   get "tournaments" => "pages#tournaments"
