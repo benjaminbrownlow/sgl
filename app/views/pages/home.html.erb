@@ -5,5 +5,8 @@
 
 
 	<button> Sign Up</button><br>
+	<% if player_signed_in? %>
+	<% else %>
 	<%= link_to 'Or Create an Account', '#' %>
+	<% end %>
 </div>

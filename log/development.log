@@ -7398,3 +7398,157 @@ Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 13:43:08 -070
 
 
 Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 13:43:08 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 13:56:02 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms
+
+SyntaxError (/Users/angelocordon/Development/dev.sgl/app/views/pages/home.html.erb:8: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...append=( if player_signed_in? );@output_buffer.safe_append='
+...                               ^
+/Users/angelocordon/Development/dev.sgl/app/views/pages/home.html.erb:9: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;	 else 
+         	     ^
+/Users/angelocordon/Development/dev.sgl/app/views/pages/home.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;	 end 
+         	    ^
+/Users/angelocordon/Development/dev.sgl/app/views/pages/home.html.erb:14: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/angelocordon/Development/dev.sgl/app/views/pages/home.html.erb:16: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/pages/home.html.erb:8: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/pages/home.html.erb:9: syntax error, unexpected keyword_else, expecting ')'
+  app/views/pages/home.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+  app/views/pages/home.html.erb:14: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/pages/home.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.5ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (82.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 13:56:02 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms
+
+SyntaxError (/Users/angelocordon/Development/dev.sgl/app/views/pages/home.html.erb:8: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...append=( if player_signed_in? );@output_buffer.safe_append='
+...                               ^
+/Users/angelocordon/Development/dev.sgl/app/views/pages/home.html.erb:9: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;	 else 
+         	     ^
+/Users/angelocordon/Development/dev.sgl/app/views/pages/home.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;	 end 
+         	    ^
+/Users/angelocordon/Development/dev.sgl/app/views/pages/home.html.erb:14: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/angelocordon/Development/dev.sgl/app/views/pages/home.html.erb:16: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/pages/home.html.erb:8: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/pages/home.html.erb:9: syntax error, unexpected keyword_else, expecting ')'
+  app/views/pages/home.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+  app/views/pages/home.html.erb:14: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/pages/home.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 109ms (Views: 108.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:26 -0700
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-10-02 13:56:31 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 102ms (Views: 100.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/players/sign_in" for 127.0.0.1 at 2014-10-02 13:56:35 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uhrjNKZ/Lk1zJA05PKXrZf9U6JfDHwGzodCzAbCbofM=", "player"=>{"email"=>"angelocordon@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."email" = 'angelocordon@gmail.com'  ORDER BY "players"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "players" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["current_sign_in_at", "2014-10-02 20:56:35.837941"], ["sign_in_count", 2], ["updated_at", "2014-10-02 20:56:35.838643"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 13:56:35 -0700
+Processing by PagesController#home as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = 1  ORDER BY "players"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 102ms (Views: 100.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 13:56:35 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:35 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:36 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 13:56:36 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 13:56:36 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 13:56:36 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:36 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:36 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:36 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:36 -0700
