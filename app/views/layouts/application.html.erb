@@ -3,19 +3,26 @@
 <head>
   <title>Sovereign Gaming League: 1v1 Online Tournaments</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= render 'layouts/nav'	%>
-
-<div class="container">
-	<% flash.each do |name, msg| %>
-   <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-	<% end %>
-	<%= yield %>
+<div id="wrap">
+	<div class="container">
+		<% flash.each do |name, msg| %>
+	   <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+		<% end %>
+		<%= yield %>
+	</div>
 </div>
 
+<%= render 'layouts/footer'	%>
+
 </body>
+
 </html>

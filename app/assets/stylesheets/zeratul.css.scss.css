@@ -1,1 +1,105 @@
 @import 'bootstrap';
+
+// STYLES
+$green: #91c63e;
+$blue: #475862;
+
+body {
+	background-color: $blue;
+	height: 100%;
+	color: #fff;
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  // margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+.footer {
+	height: 60px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	line-height: 60px;
+}
+
+nav {
+	padding: 10px;
+	text-align: right; 
+	ul, li {
+		display: inline;
+	}
+	li {
+		text-transform: uppercase;
+	}
+	li:nth-child(-n+2):after {
+		margin: auto 20px;
+		content: '|';
+	}
+	
+	a:hover {
+		text-decoration: none;
+	}
+
+	img {
+		margin-left: 20px;
+	}
+}
+
+/*.navbar {
+	background-color: none !important;
+	border: none !important;
+	padding-top: 10px;
+	text-transform: uppercase;
+}*/
+
+a {
+	color: #fff;
+}
+
+a:hover {
+	color: #fff;
+}
+
+h1 {
+	font-family: 'Ubuntu', sans-serif;
+	text-transform: uppercase;
+}
+
+
+
+button, input[type="submit"] {
+	background-color: $green;
+	border: none;
+	text-transform: uppercase;
+	margin: 20px auto;
+	padding: 10px 40px;
+	display: block;
+	min-width: 155px;
+}
+
+input {
+	display: block;
+	min-width: 155px;
+	margin: 20px auto;
+	background-color: $blue;
+	border: none;
+}
+
+input, select, textarea{
+    color: #fff;
+}
+
+textarea:focus, input:focus {
+    color: #fff;
+}
+
+
+.landing {
+	text-align: center;
+}
