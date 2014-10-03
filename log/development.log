@@ -7552,3 +7552,817 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:36
 
 
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 13:56:36 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 16:25:53 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_nav.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 232ms (Views: 212.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:25:53 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:25:54 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:25:54 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:25:54 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:25:54 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:25:54 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:25:54 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:25:54 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:25:54 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:25:54 -0700
+
+
+Started GET "/players/sign_up" for 127.0.0.1 at 2014-10-02 16:26:27 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (29.8ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 125ms (Views: 121.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2014-10-02 16:26:34 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wYt136O8jWuW5Qcxa8u0zTCiugqfmLbh0MDcqmxKEyg=", "player"=>{"name"=>"Adama", "evetag"=>"ADama2", "email"=>"angelo@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create an Account"}
+Unpermitted parameters: name, evetag
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPlayer Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "players"  WHERE "players"."email" = 'angelo@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "players" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-02 23:26:34.712539"], ["email", "angelo@gmail.com"], ["encrypted_password", "$2a$10$FlkMUGpBAjpdsAGqHJoUr.r4SD8HxpQtomqH2MPS5ZqVTT35L54yi"], ["updated_at", "2014-10-02 23:26:34.712539"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "players" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "players"."id" = 2[0m  [["current_sign_in_at", "2014-10-02 23:26:34.734789"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-02 23:26:34.734789"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-02 23:26:34.736170"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 140ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 16:26:34 -0700
+Processing by PagesController#home as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = 2  ORDER BY "players"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 147ms (Views: 145.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:26:34 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:26:34 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:26:34 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:26:35 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:26:35 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:26:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:26:35 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:26:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:26:35 -0700
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"   ORDER BY "players"."id" DESC LIMIT 1[0m
+  [1m[35mPlayer Load (0.6ms)[0m  SELECT  "players".* FROM "players"   ORDER BY "players"."id" DESC LIMIT 1
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:28:51 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:28:51 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:28:51 -0700
+
+
+Started GET "/players/sign_up" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = 2  ORDER BY "players"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+Processing by PagesController#home as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = 2  ORDER BY "players"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 115ms (Views: 114.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:33:57 -0700
+
+
+Started DELETE "/players/sign_out" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wYt136O8jWuW5Qcxa8u0zTCiugqfmLbh0MDcqmxKEyg="}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = 2  ORDER BY "players"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 118ms (Views: 117.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:34:19 -0700
+
+
+Started GET "/players/sign_up" for 127.0.0.1 at 2014-10-02 16:34:23 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 108ms (Views: 106.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2014-10-02 16:34:35 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0K7T1646LF/tH9vap2CNiPOytL5vC5fJXhA99eWTZcc=", "player"=>{"name"=>"blah", "evetag"=>"", "email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "commit"=>"Create an Account"}
+Unpermitted parameters: name, evetag
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPlayer Exists (0.2ms)[0m  SELECT  1 AS one FROM "players"  WHERE "players"."email" = 'asdf@asdf.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered devise/registrations/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 194ms (Views: 95.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:34:35 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:34:35 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:35 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:34:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:35 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:35 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:35 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:36 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:36 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:34:36 -0700
+
+
+Started POST "/players" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0K7T1646LF/tH9vap2CNiPOytL5vC5fJXhA99eWTZcc=", "player"=>{"name"=>"blah", "evetag"=>"blah", "email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "commit"=>"Create an Account"}
+Unpermitted parameters: name, evetag
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPlayer Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "players"  WHERE "players"."email" = 'asdf@asdf.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "players" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-02 23:34:51.633958"], ["email", "asdf@asdf.com"], ["encrypted_password", "$2a$10$JnY1Yj0jwF3JuqLu7lh8au0q8vFghRkpoAMf4w.LmqGWrjMJf8DZm"], ["updated_at", "2014-10-02 23:34:51.633958"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "players" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "players"."id" = 3[0m  [["current_sign_in_at", "2014-10-02 23:34:51.637801"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-02 23:34:51.637801"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-02 23:34:51.638537"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 110ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+Processing by PagesController#home as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = 3  ORDER BY "players"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 106ms (Views: 105.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:34:51 -0700
+  [1m[36mPlayer Load (3.1ms)[0m  [1mSELECT "players".* FROM "players"[0m
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"   ORDER BY "players"."id" DESC LIMIT 1
+
+
+Started POST "/players" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0K7T1646LF/tH9vap2CNiPOytL5vC5fJXhA99eWTZcc=", "player"=>{"name"=>"blah", "evetag"=>"", "email"=>"asdf@asdf.com", "password"=>"[FILTERED]"}, "commit"=>"Create an Account"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = 3  ORDER BY "players"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+Processing by PagesController#home as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = 3  ORDER BY "players"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 96ms (Views: 94.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:37:48 -0700
+
+
+Started DELETE "/players/sign_out" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0K7T1646LF/tH9vap2CNiPOytL5vC5fJXhA99eWTZcc="}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = 3  ORDER BY "players"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 100ms (Views: 97.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:45:14 -0700
+
+
+Started GET "/players/sign_up" for 127.0.0.1 at 2014-10-02 16:45:15 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 109ms (Views: 107.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/players" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oygBd5Mjmr57UHccPlg/dN0C9+EvDtIJvNA0livyYwk=", "player"=>{"name"=>"Please work", "evetag"=>"blah", "email"=>"emai@me.com", "password"=>"[FILTERED]"}, "commit"=>"Create an Account"}
+Unpermitted parameters: evetag
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPlayer Exists (0.3ms)[0m  SELECT  1 AS one FROM "players"  WHERE "players"."email" = 'emai@me.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "players" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-02 23:45:31.161508"], ["email", "emai@me.com"], ["encrypted_password", "$2a$10$0s6DyNTGp3/lkcuGgjczLO1KiD82ndFFcCt/8D7c9AmbLqFMfuwBa"], ["name", "Please work"], ["updated_at", "2014-10-02 23:45:31.161508"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[35mSQL (0.4ms)[0m  UPDATE "players" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "players"."id" = 4  [["current_sign_in_at", "2014-10-02 23:45:31.167823"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-02 23:45:31.167823"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-02 23:45:31.168532"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 113ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+Processing by PagesController#home as HTML
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = 4  ORDER BY "players"."id" ASC LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 123ms (Views: 121.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:45:31 -0700
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  "players".* FROM "players"   ORDER BY "players"."id" DESC LIMIT 1[0m
+
+
+Started DELETE "/players/sign_out" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oygBd5Mjmr57UHccPlg/dN0C9+EvDtIJvNA0livyYwk="}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = 4  ORDER BY "players"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 111ms (Views: 108.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:50:30 -0700
+
+
+Started GET "/players/sign_up" for 127.0.0.1 at 2014-10-02 16:50:35 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 102ms (Views: 98.9ms | ActiveRecord: 0.0ms)
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT "players".* FROM "players"
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"   ORDER BY "players"."id" ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  "players".* FROM "players"   ORDER BY "players"."id" DESC LIMIT 1
+
+
+Started GET "/players/sign_up" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 138ms (Views: 133.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 16:52:41 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_players_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_players_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_players_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_players_on_email' AND type='index'
+
+  [1m[36m (1.4ms)[0m  [1mDROP TABLE "players"[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255) DEFAULT '' NOT NULL, "evetag" varchar(255), "totalGames" integer DEFAULT 0 NOT NULL, "totalWins" integer DEFAULT 0 NOT NULL, "admin" boolean DEFAULT 'f', "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_players_on_email" ON "players" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_players_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_players_on_email' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_players_on_reset_password_token" ON "players" ("reset_password_token")
+  [1m[36m (0.9ms)[0m  [1mDROP TABLE "tournaments"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "tournaments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "totalPlayers" integer DEFAULT 0 NOT NULL, "totalMatches" integer DEFAULT 0 NOT NULL, "created_at" datetime, "updated_at" datetime, "description" text, "signUpDate" datetime, "gameDate" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[36mPlayer Load (0.9ms)[0m  [1mSELECT "players".* FROM "players"[0m
+
+
+Started POST "/players" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ACHbZzLBPW48eypu3sp17Pz9/eumOid9UyOpL4i9Jwk=", "player"=>{"name"=>"Angelo", "evetag"=>"Schmangelo", "email"=>"angelocordon@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create an Account"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPlayer Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "players"  WHERE "players"."email" = 'angelocordon@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "players" ("created_at", "email", "encrypted_password", "evetag", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-03 00:04:54.617392"], ["email", "angelocordon@gmail.com"], ["encrypted_password", "$2a$10$dsAV32kjXYUyurIk7q4Y9.59kkpaBdy6XS/p4mO8uufv65JqMBECC"], ["evetag", "Schmangelo"], ["name", "Angelo"], ["updated_at", "2014-10-03 00:04:54.617392"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "players" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "players"."id" = 1[0m  [["current_sign_in_at", "2014-10-03 00:04:54.621388"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-03 00:04:54.621388"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-03 00:04:54.621960"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 118ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+Processing by PagesController#home as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = 1  ORDER BY "players"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 106ms (Views: 102.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 17:04:54 -0700
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT "players".* FROM "players"
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT "players".* FROM "players"[0m
+
+
+Started GET "/tournaments" for 127.0.0.1 at 2014-10-02 17:05:29 -0700
+Processing by TournamentsController#index as HTML
+  [1m[35mTournament Load (0.3ms)[0m  SELECT "tournaments".* FROM "tournaments"
+  Rendered tournaments/index.html.erb within layouts/application (2.0ms)
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = 1  ORDER BY "players"."id" ASC LIMIT 1[0m
+  Rendered layouts/_nav.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 110ms (Views: 108.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tournaments/new" for 127.0.0.1 at 2014-10-02 17:05:31 -0700
+Processing by TournamentsController#new as HTML
+  Rendered tournaments/_form.html.erb (15.0ms)
+  Rendered tournaments/new.html.erb within layouts/application (17.4ms)
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = 1  ORDER BY "players"."id" ASC LIMIT 1
+  Rendered layouts/_nav.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 119ms (Views: 116.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/tournaments" for 127.0.0.1 at 2014-10-02 17:05:49 -0700
+Processing by TournamentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ACHbZzLBPW48eypu3sp17Pz9/eumOid9UyOpL4i9Jwk=", "tournament"=>{"title"=>"Battle of Yevol", "description"=>"Hello this is a battle!", "signUpDate"=>"01/12/14", "gameDate"=>"01/13/14"}, "commit"=>"Create Tournament"}
+Unpermitted parameters: signUpDate, gameDate
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "tournaments" ("created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-03 00:05:49.875701"], ["description", "Hello this is a battle!"], ["title", "Battle of Yevol"], ["updated_at", "2014-10-03 00:05:49.875701"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tournaments/1
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/tournaments/1" for 127.0.0.1 at 2014-10-02 17:05:49 -0700
+Processing by TournamentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTournament Load (0.3ms)[0m  SELECT  "tournaments".* FROM "tournaments"  WHERE "tournaments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tournaments/show.html.erb within layouts/application (1.2ms)
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = 1  ORDER BY "players"."id" ASC LIMIT 1[0m
+  Rendered layouts/_nav.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 117ms (Views: 113.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 17:05:50 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:05:50 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 17:05:50 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:05:50 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:05:50 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:05:50 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 17:05:50 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:05:50 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 17:05:50 -0700
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 17:05:50 -0700
+  [1m[35mTournament Load (0.4ms)[0m  SELECT "tournaments".* FROM "tournaments"
+
+
+Started GET "/tournaments/1/edit" for 127.0.0.1 at 2014-10-02 17:06:43 -0700
+Processing by TournamentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTournament Load (0.2ms)[0m  SELECT  "tournaments".* FROM "tournaments"  WHERE "tournaments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tournaments/_form.html.erb (3.9ms)
+  Rendered tournaments/edit.html.erb within layouts/application (6.3ms)
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT  "players".* FROM "players"  WHERE "players"."id" = 1  ORDER BY "players"."id" ASC LIMIT 1[0m
+  Rendered layouts/_nav.html.erb (16.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 141ms (Views: 127.6ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/tournaments/1" for 127.0.0.1 at 2014-10-02 17:06:52 -0700
+Processing by TournamentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ACHbZzLBPW48eypu3sp17Pz9/eumOid9UyOpL4i9Jwk=", "tournament"=>{"title"=>"Battle of Yevol", "description"=>"Hello this is a battle!", "signUpDate"=>"01/12/14", "gameDate"=>"01/13/14"}, "commit"=>"Update Tournament", "id"=>"1"}
+  [1m[35mTournament Load (0.2ms)[0m  SELECT  "tournaments".* FROM "tournaments"  WHERE "tournaments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 4ms
+
+ArgumentError (argument out of range):
+  app/controllers/tournaments_controller.rb:29:in `update'
+
+
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/angelocordon/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.9ms)
+
+
+Started GET "/tournaments/1/edit" for 127.0.0.1 at 2014-10-02 17:09:03 -0700
+Processing by TournamentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTournament Load (0.2ms)[0m  [1mSELECT  "tournaments".* FROM "tournaments"  WHERE "tournaments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tournaments/_form.html.erb (4.6ms)
+  Rendered tournaments/edit.html.erb within layouts/application (6.7ms)
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT  "players".* FROM "players"  WHERE "players"."id" = 1  ORDER BY "players"."id" ASC LIMIT 1
+  Rendered layouts/_nav.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 107ms (Views: 104.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-10-02 17:09:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-02 17:09:03 -0700
+
+
+Started GET "/assets/zeratul.css.css?body=1" for 127.0.0.1 at 2014-10-02 17:09:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-02 17:09:03 -0700
+
+
+Started GET "/assets/sglhex.png" for 127.0.0.1 at 2014-10-02 17:09:03 -0700
+
+
+Started GET "/assets/tournaments.js?body=1" for 127.0.0.1 at 2014-10-02 17:09:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-02 17:09:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-02 17:09:03 -0700
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-02 17:09:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-02 17:09:03 -0700

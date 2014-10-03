@@ -38,13 +38,13 @@ ActiveRecord::Schema.define(version: 20141002022022) do
 
   create_table "tournaments", force: true do |t|
     t.string   "title"
-    t.text     "description"
-    t.datetime "signUpDate"
-    t.datetime "gameDate"
     t.integer  "totalPlayers", default: 0, null: false
     t.integer  "totalMatches", default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.datetime "signUpDate"
+    t.datetime "gameDate"
   end
 
 end
