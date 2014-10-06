@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
+  
   def home
-	  @tournaments = Tournament.all
+		 @tournaments = Tournament.all
   end
 
   def tournaments

@@ -1,7 +1,9 @@
 <div class="col-xs-12 col-sm-8 col-sm-offset-2 landing">
-	<h1>Tournament.Title</h1>
-	<h2>Tournament.description</h2>
-	<h3>Tournament.date</h3>
+	<% @tournaments.each do |tournament| %>
+    <h1><%= tournament.title %></h1>
+    <h2><%= tournament.description %></h2>
+    <h3><%= tournament.signUpDate %></h3>
+  <% end %>
 
 
 	<button> Sign Up</button><br>
