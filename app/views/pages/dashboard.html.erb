@@ -1,0 +1,18 @@
+<% @players.each do |player| %>
+<div class="col-xs-12 col-sm-2 col-sm-offset-2">
+	<%= image_tag("avatar001.png", :alt => "Sovereign Gaming League") %>
+	<%= player.evetag %>
+</div>
+
+<div class="col-xs-12-col-sm-6">
+    <%= player.totalGames %>
+    <%= player.totalWins %>
+  <% end %>
+</div>
+
+<div class="col-xs-12-col-sm-6">
+  <h1> Upcoming Battles </h1>
+  <% @tournaments.each do |tournament| %>
+  <h2><%= tournament.title =%></h2>
+  <% end %>
+</div>

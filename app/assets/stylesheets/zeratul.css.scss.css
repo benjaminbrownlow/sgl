@@ -5,6 +5,9 @@ $green: #91c63e;
 $blue: #475862;
 
 body {
+	background: url('splash001b.jpg') no-repeat;
+	background-position: top middle;
+	background-size: cover;
 	background-color: $blue;
 	height: 100%;
 	color: #fff;

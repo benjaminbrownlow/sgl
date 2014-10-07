@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :players
   root 'pages#home'
   get "tournaments" => "pages#tournaments"
-
+  get "dashboard" => "pages#dashboard"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
