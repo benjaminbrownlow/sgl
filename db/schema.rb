@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002022022) do
+ActiveRecord::Schema.define(version: 20141009001146) do
 
   create_table "players", force: true do |t|
     t.string   "name"
@@ -38,13 +38,13 @@ ActiveRecord::Schema.define(version: 20141002022022) do
 
   create_table "tournaments", force: true do |t|
     t.string   "title"
-    t.integer  "totalPlayers", default: 0, null: false
-    t.integer  "totalMatches", default: 0, null: false
+    t.integer  "totalPlayers", default: 0,                     null: false
+    t.integer  "totalMatches", default: 0,                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
-    t.datetime "signUpDate"
-    t.datetime "gameDate"
+    t.datetime "signUpDate",   default: '2014-10-09 00:17:17', null: false
+    t.datetime "gameDate",     default: '2014-10-09 00:17:17', null: false
   end
 
 end

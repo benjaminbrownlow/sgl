@@ -4,6 +4,24 @@
 $green: #91c63e;
 $blue: #475862;
 
+
+// DEVS
+.red {
+	border: 1px solid red;
+}
+
+.blue {
+	border: 1px dashed blue;
+}
+
+.black {
+	border: 2px dotted black;
+}
+
+/* {
+	border: 1px dashed red;
+} */
+
 body {
 	background: url('splash001b.jpg') no-repeat;
 	background-position: top middle;
@@ -17,7 +35,7 @@ body {
 }
 
 #wrap {
-  min-height: 100%;
+  min-height: 540px;
   height: auto;
   // margin: 0 auto -60px;
   padding: 0 0 60px;
@@ -34,6 +52,7 @@ body {
 nav {
 	padding: 10px;
 	text-align: right; 
+	margin-bottom: 20px;
 	ul, li {
 		display: inline;
 	}
@@ -103,6 +122,41 @@ textarea:focus, input:focus {
 }
 
 
-.landing {
+.landing, {
 	text-align: center;
+}
+
+#playerProfile {
+	text-transform: uppercase;
+	text-align: center;
+	img {
+	display: block;
+	margin: 0px auto 10px;
+	}
+}
+
+.playerStats {
+	text-align: center;
+	margin-bottom: 20px;
+	h1 {
+		margin-top: 0px;
+	}
+}
+
+.playerScore {
+	width: 190px; 
+	margin: 10px;
+	text-align: center; 
+	float: left; 
+	h1 {
+		font-size: 3em;
+	}
+}
+
+#playerTournaments {
+	margin-top: 50px;
+}
+
+.clear {
+	clear:both;
 }

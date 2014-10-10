@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   
   def home
-		 @tournaments = Tournament.all
+		 @tournament = Tournament.last
+
   end
 
   def tournaments
@@ -9,7 +10,9 @@ class PagesController < ApplicationController
 
   def dashboard
   	@players = Player.all
+
   	@tournaments = Tournament.all
   end
   
 end
+	
