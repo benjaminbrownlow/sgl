@@ -1,4 +1,26 @@
-<h1>Listing Tournaments</h1>
+<div class="col-xs-12 col-sm-8 col-sm-offset-2 landing">
+
+  <h1>Upcoming Tournaments</h1>
+
+  <% @tournaments.each do |tournament| %>
+
+  <div style="float:left; width: 33%;">
+    <%= link_to tournament.title, tournament %>
+  </div>
+
+  <div style="float:left; width: 33%;">
+    <%= link_to tournament.signUpDate, tournament %>
+  </div>
+
+  <div style="float:left; width: 33%;">
+    <button> Sign Up</button>
+  </div>  
+
+  <% end %>
+
+</div>
+
+
 
 <table>
   <thead>
@@ -14,7 +36,7 @@
   <tbody>
     <% @tournaments.each do |tournament| %>
       <tr>
-        <td><%= tournament.title %></td>
+        <td><%= link_to tournament.title, tournament %></td>
         <td><%= tournament.description %></td>
         <td><%= tournament.signUpDate %></td>
         <td><%= tournament.gameDate %></td>

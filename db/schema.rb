@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009001146) do
+ActiveRecord::Schema.define(version: 20141010145848) do
 
   create_table "players", force: true do |t|
     t.string   "name"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20141009001146) do
     t.datetime "updated_at"
     t.text     "description"
     t.datetime "signUpDate",   default: '2014-10-09 00:17:17', null: false
-    t.datetime "gameDate",     default: '2014-10-09 00:17:17', null: false
+    t.datetime "gameDate",     default: '2014-10-11 14:59:42', null: false
   end
 
 end

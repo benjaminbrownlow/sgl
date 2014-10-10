@@ -1,13 +1,20 @@
 <nav>
   <div class="container">
     <ul>
-      <li><%= link_to "Tournaments", tournaments_path %></li>
-       <% if player_signed_in? %>
-        <li><%= link_to 'Edit Profile',edit_player_registration_path %></li>
+       <% if player_signed_in? &&  current_player.try(:admin?)%>
+        <li><%= link_to 'New Tournament', new_tournament_path %><li>
+        <li> | </li>
+        <li><%= link_to "Log out", destroy_player_session_path, method: :delete %></li> 
+       <% elsif player_signed_in? %>
+        Player
+        <li> | </li>
         <li><%= link_to "Log out", destroy_player_session_path, method: :delete %></li>
+      
+
       <% else %>
-        <li><%= link_to "Create New Account", new_player_registration_path %></li>
-        <li><%= link_to "Sign in", new_player_session_path %></li>
+        <li><%= link_to "Sign Up", new_player_registration_path %></li>
+        <li> | </li>
+        <li><%= link_to "Log In", new_player_session_path %></li>
       <% end %>
         <%= link_to image_tag("sglhex.png", :alt => "Sovereign Gaming League"), root_path %>
       

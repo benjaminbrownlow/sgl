@@ -59,10 +59,13 @@ nav {
 	li {
 		text-transform: uppercase;
 	}
+
+	/*
 	li:nth-child(-n+2):after {
 		margin: auto 20px;
 		content: '|';
 	}
+	*/
 	
 	a:hover {
 		text-decoration: none;
@@ -102,19 +105,32 @@ button, input[type="submit"] {
 	margin: 20px auto;
 	padding: 10px 40px;
 	display: block;
-	min-width: 155px;
+	min-width: 500px;
 }
 
+$backgroundBlue: rgba(49, 61, 68, 0.6);
 input {
 	display: block;
-	min-width: 155px;
-	margin: 20px auto;
-	background-color: $blue;
+	min-width: 500px;
+	margin: 32px auto;
 	border: none;
+	height: 50px;
+	padding: 20px;
+	background-color: $backgroundBlue;
+	letter-spacing: 1px;
 }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #313d44 inset;
+  -webkit-text-fill-color: #fff !important;
+
+}
+
 
 input, select, textarea{
     color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 textarea:focus, input:focus {
