@@ -31,6 +31,7 @@ body {
 	color: #fff;
 	font-family: 'Droid Sans', sans-serif;
 	font-size: 16px;
+	// text-transform: uppercase;
 	letter-spacing: 1px;
 }
 
@@ -58,6 +59,7 @@ nav {
 	}
 	li {
 		text-transform: uppercase;
+		margin: 0 10px;
 	}
 
 	/*
@@ -129,7 +131,7 @@ input:-webkit-autofill {
 
 input, select, textarea{
     color: #fff;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     letter-spacing: 1px;
 }
 

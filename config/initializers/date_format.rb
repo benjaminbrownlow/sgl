@@ -11,9 +11,9 @@
   # DateTime
   # ----------------------------
   #DateTime::DATE_FORMATS[:default] = "%Y-%m-%d"  # 2013-11-03 14:22:18
-  DateTime::DATE_FORMATS[:default] = "&proc"     # November 3rd, 2013 14:22
+  #DateTime::DATE_FORMATS[:default] = "&proc"     # November 3rd, 2013 14:22
   #DateTime::DATE_FORMATS[:default] = "%B %e, %Y" # November 3, 2013 14:22
-  #DateTime::DATE_FORMATS[:default] = "%e %b %Y"  # Sun, 3 Nov 2013 14:22:18 -0700
+  DateTime::DATE_FORMATS[:default] = "%e %b %Y"  # Sun, 3 Nov 2013 14:22:18 -0700
   #DateTime::DATE_FORMATS[:default] = "%Y%m%d"    # 20131103142218
   #DateTime::DATE_FORMATS[:default] = "%e %b"     # 3 Nov 14:22
   #DateTime::DATE_FORMATS[:default] = ""          # custom

@@ -1,21 +1,22 @@
-<% @players.each do |player| %>
+
 	<div id="playerProfile" class="col-xs-12 col-sm-3 col-sm-offset-1">
 		<%= image_tag("avatar01.png") %>
-		<h3><%= player.evetag %></h3>
+		<h3><%= @player.evetag %></h3>
+		<%= link_to 'Edit Profile', edit_player_registration_path %>
 	</div>
 
 	<div class="col-xs-12 col-sm-7 col-sm-offset-1 playerStats">
 		<h1>Player Stats</h1>
 		<div class="playerScore">
-			<h1><%= player.totalGames %></h1>
+			<h1><%= @player.totalGames %></h1>
 			<h2>Total Games</h2>
 		</div>
 		<div class="playerScore">
-			<h1><%= player.totalWins %></h1>
+			<h1><%= @player.totalWins %></h1>
 			<h2>Wins</h2>
 		</div>		
 		<div class="playerScore">
-			<h1>0</h1>
+			<h1><%= @player.totalGames - @player.totalWins %></h1>
 			<h2>Loses</h2>
 		</div>
 	</div>
@@ -28,7 +29,7 @@
 	  <h2><%= tournament.title =%></h2>
 	  <% end %>
 	</div>
-<% end %>
+
 
 
 <div class="clear"></div>

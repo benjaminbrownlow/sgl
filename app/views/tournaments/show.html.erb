@@ -1,24 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @tournament.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @tournament.description %>
-</p>
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 landing">
+	<h1><%= @tournament.title %></h1>
 
-<p>
-  <strong>Sign Up Date:</strong>
-  <%= @tournament.signUpDate %>
-</p>
+	<div style="border: 1px solid red; height: 400px; line-height: 400px;">
+		Battle Background
+	</div>
+	<h2><%= @tournament.gameDate %></h2>
+	<p><%= @tournament.description %></p>
 
-<p>
-  <strong>Tournament Date:</strong>
-  <%= @tournament.gameDate %>
-</p>
+	
+	<% if player_signed_in? &&  current_player.try(:admin?)%>
+		<button><%= link_to 'Edit This Tournament', edit_tournament_path(@tournament) %></button>
+	<% else %>
+		<button>Sign Up</button>
+	<% end %>
+</div>
 
-<%= link_to 'Edit', edit_tournament_path(@tournament) %> |
-<%= link_to 'Back', tournaments_path %>
+
+
+	

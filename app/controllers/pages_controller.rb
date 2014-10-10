@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-  	@players = current_player
+  	@player = current_player
   	@tournaments = Tournament.all
   end
   

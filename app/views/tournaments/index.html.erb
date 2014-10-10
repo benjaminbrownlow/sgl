@@ -1,6 +1,7 @@
 <div class="col-xs-12 col-sm-8 col-sm-offset-2 landing">
-
+  
   <h1>Upcoming Tournaments</h1>
+
 
   <% @tournaments.each do |tournament| %>
 
@@ -9,11 +10,22 @@
   </div>
 
   <div style="float:left; width: 33%;">
-    <%= link_to tournament.signUpDate, tournament %>
+    <%= tournament.signUpDate %>
   </div>
 
   <div style="float:left; width: 33%;">
-    <button> Sign Up</button>
+    <% if player_signed_in? &&  current_player.try(:admin?)%>
+    <%= link_to 'Edit', edit_tournament_path(tournament) %>
+    <%= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    <% elsif player_signed_in? %>
+    Sign Up
+    
+    <% else %>
+    
+    <%= link_to 'Log In to Join', new_player_session_path %>
+  
+    <% end %>
   </div>  
 
   <% end %>
@@ -22,7 +34,7 @@
 
 
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>Tournament</th>
@@ -51,3 +63,5 @@
 <br>
 
 <%= link_to 'New Tournament', new_tournament_path %>
+
+--> 
