@@ -29,7 +29,7 @@ body {
 	background-color: $blue;
 	height: 100%;
 	color: #fff;
-	font-family: 'Droid Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 16px;
 	// text-transform: uppercase;
 	letter-spacing: 1px;
@@ -87,6 +87,8 @@ nav {
 
 a {
 	color: #fff;
+	text-transform: uppercase;
+
 }
 
 a:hover {
@@ -104,6 +106,7 @@ button, input[type="submit"] {
 	background-color: $green;
 	border: none;
 	text-transform: uppercase;
+	font-weight: bolder;
 	margin: 20px auto;
 	padding: 10px 40px;
 	display: block;

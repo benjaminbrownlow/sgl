@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010145848) do
+ActiveRecord::Schema.define(version: 20141021174000) do
+
+  create_table "brackets", force: true do |t|
+    t.integer  "bracket_number"
+    t.integer  "tournament_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "matches", force: true do |t|
+    t.integer  "brackets_id"
+    t.integer  "match_number"
+    t.string   "playerOne"
+    t.string   "playerTwo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "players", force: true do |t|
     t.string   "name"

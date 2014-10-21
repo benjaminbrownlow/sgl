@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :tournaments
+  
+  resources :tournaments do 
+    resources :brackets do
+      resources :matches
+    end    
+  end
 
   devise_for :players
+
   root 'pages#home'
   get "tournaments" => "pages#tournaments"
   get "dashboard" => "pages#dashboard"
