@@ -3,6 +3,7 @@ class TournamentsController < ApplicationController
 
   def index
     @tournaments = Tournament.all
+    @bracket = Bracket.all
   end
 
   def show
@@ -10,14 +11,17 @@ class TournamentsController < ApplicationController
 
   def new
     @tournament = Tournament.new
+    @bracket = Bracket.new
   end
 
 
   def edit
   end
 
-  def create
+  def create    
     @tournament = Tournament.new(tournament_params)
+    @tournament = Tournament.find(params[:tournament_id])
+    @bracket = Bracket.new(bracket_params)
     if @tournament.save
       redirect_to @tournament, notice: 'Tournament was successfully created.'
     else
@@ -48,4 +52,9 @@ class TournamentsController < ApplicationController
     def tournament_params
       params.require(:tournament).permit(:title, :description, :signUpDate, :gameDate)
     end
+
+    def bracket_params
+      params.require(:bracket).permit(:bracket_number, :tournament_id)
+    end
+
 end
