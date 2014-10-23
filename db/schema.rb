@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023180757) do
+ActiveRecord::Schema.define(version: 20141023193744) do
 
   create_table "brackets", force: true do |t|
     t.integer  "bracket_number"
@@ -23,11 +23,12 @@ ActiveRecord::Schema.define(version: 20141023180757) do
   create_table "matches", force: true do |t|
     t.integer  "bracket_id"
     t.integer  "match_number"
-    t.string   "playerOne"
-    t.string   "playerTwo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "players_id"
   end
+
+  add_index "matches", ["players_id"], name: "index_matches_on_players_id"
 
   create_table "players", force: true do |t|
     t.string   "name"

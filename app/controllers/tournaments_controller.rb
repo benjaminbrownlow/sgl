@@ -26,12 +26,10 @@ class TournamentsController < ApplicationController
     @bracket.save
     @bracket = Bracket.last
     @match = @bracket.matches.build(params[:match])
-    @match.playerOne = 'Optimus Prime'
-    @match.playerTwo = 'Starscream'
     @match.match_number = 1
     @match.save
     if @tournament.save
-      redirect_to @tournament, notice: 'Bracket Saved'
+      redirect_to @tournament
     else
       render action: 'new'   
     end

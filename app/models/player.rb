@@ -5,6 +5,5 @@ class Player < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tournaments
-  
-
+  belongs_to :match
 end
