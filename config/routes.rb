@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  resources :activities
   resources :tournaments do 
     resources :brackets do
       resources :matches

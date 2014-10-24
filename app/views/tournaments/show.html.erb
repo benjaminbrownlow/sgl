@@ -14,7 +14,7 @@
 	<% if player_signed_in? &&  current_player.try(:admin?)%>
 		<button><%= link_to 'Edit This Tournament', edit_tournament_path(@tournament) %></button>
 	<% else %>
-		<button>Sign Up</button>
+		<button><%= link_to 'Join This Tournament', activities_path(:tournament_id => @tournament), :method => :post %></button>
 	<% end %>
 </div>
 

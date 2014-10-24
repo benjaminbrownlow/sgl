@@ -11,23 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024012759) do
+ActiveRecord::Schema.define(version: 20141024215935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: true do |t|
+    t.integer  "player_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "brackets", force: true do |t|
     t.integer  "tournament_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "player_ids",    default: [], array: true
   end
 
   create_table "matches", force: true do |t|
     t.integer  "bracket_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "player_ids", default: [], array: true
   end
 
   create_table "players", force: true do |t|
@@ -48,10 +53,12 @@ ActiveRecord::Schema.define(version: 20141024012759) do
     t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
+    t.integer  "tournaments_id"
   end
 
   add_index "players", ["email"], name: "index_players_on_email", unique: true, using: :btree
   add_index "players", ["reset_password_token"], name: "index_players_on_reset_password_token", unique: true, using: :btree
+  add_index "players", ["tournaments_id"], name: "index_players_on_tournaments_id", using: :btree
 
   create_table "tournaments", force: true do |t|
     t.string   "title"
@@ -62,7 +69,9 @@ ActiveRecord::Schema.define(version: 20141024012759) do
     t.text     "description"
     t.datetime "signUpDate",   default: '2014-10-09 00:17:17', null: false
     t.datetime "gameDate",     default: '2014-10-11 14:59:42', null: false
-    t.integer  "player_ids",   default: [],                                 array: true
+    t.integer  "players_id"
   end
+
+  add_index "tournaments", ["players_id"], name: "index_tournaments_on_players_id", using: :btree
 
 end
