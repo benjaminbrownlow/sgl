@@ -11,24 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023193744) do
+ActiveRecord::Schema.define(version: 20141024012759) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "brackets", force: true do |t|
-    t.integer  "bracket_number"
     t.integer  "tournament_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "player_ids",    default: [], array: true
   end
 
   create_table "matches", force: true do |t|
     t.integer  "bracket_id"
-    t.integer  "match_number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "players_id"
+    t.integer  "player_ids", default: [], array: true
   end
-
-  add_index "matches", ["players_id"], name: "index_matches_on_players_id"
 
   create_table "players", force: true do |t|
     t.string   "name"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20141023193744) do
     t.datetime "last_sign_in_at"
   end
 
-  add_index "players", ["email"], name: "index_players_on_email", unique: true
-  add_index "players", ["reset_password_token"], name: "index_players_on_reset_password_token", unique: true
+  add_index "players", ["email"], name: "index_players_on_email", unique: true, using: :btree
+  add_index "players", ["reset_password_token"], name: "index_players_on_reset_password_token", unique: true, using: :btree
 
   create_table "tournaments", force: true do |t|
     t.string   "title"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20141023193744) do
     t.text     "description"
     t.datetime "signUpDate",   default: '2014-10-09 00:17:17', null: false
     t.datetime "gameDate",     default: '2014-10-11 14:59:42', null: false
+    t.integer  "player_ids",   default: [],                                 array: true
   end
 
 end

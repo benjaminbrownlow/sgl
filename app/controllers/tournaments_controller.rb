@@ -22,11 +22,11 @@ class TournamentsController < ApplicationController
   def create    
     @tournament = Tournament.new(tournament_params)
     @bracket = @tournament.brackets.build(params[:bracket])
-    @bracket.bracket_number = 1
+    # @bracket.bracket_number = 1
     @bracket.save
     @bracket = Bracket.last
     @match = @bracket.matches.build(params[:match])
-    @match.match_number = 1
+    # @match.match_number = 1
     @match.save
     if @tournament.save
       redirect_to @tournament
