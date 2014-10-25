@@ -23,7 +23,7 @@ $blue: #475862;
 } */
 
 body {
-	background-image: asset_url('splash001b.jpg') no-repeat;
+	background: image-url('splash001b.jpg') no-repeat;
 	background-position: top middle;
 	background-size: cover;
 	background-color: $blue;
