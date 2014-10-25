@@ -4,12 +4,9 @@ class PagesController < ApplicationController
 		 @tournament = Tournament.last
   end
 
-  def tournaments
-  end
-
   def dashboard
   	@player = current_player
-  	@tournaments = Tournament.all
+    @tournaments = @player.tournaments  
   end
   
 end

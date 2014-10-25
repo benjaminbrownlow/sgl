@@ -16,6 +16,17 @@
 	<% else %>
 		<button><%= link_to 'Join This Tournament', activities_path(:tournament_id => @tournament), :method => :post %></button>
 	<% end %>
+
+	<% if @players.any? %>
+		<h1>Upcoming Players</h1>
+		<ul>
+			<% @players.each do |player| %>
+				<li><%= player.evetag %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+
 </div>
 
 
