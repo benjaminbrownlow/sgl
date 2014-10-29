@@ -1,5 +1,8 @@
 class TournamentsController < ApplicationController
-  before_action :set_tournament, only: [:show, :edit, :update, :destroy, :sign_up]
+  before_action :set_tournament, only: [:show, :edit, :update, :destroy ]
+  before_action :authenticate_player!, except: [:index, :show]
+  before_action :correct_user, except: [:index, :show]
+
 
   def index
     @tournaments = Tournament.all
@@ -12,8 +15,6 @@ class TournamentsController < ApplicationController
 
   def new
     @tournament = Tournament.new
-    @bracket = Bracket.new
-    @match = Match.new
   end
 
 
@@ -22,13 +23,6 @@ class TournamentsController < ApplicationController
 
   def create    
     @tournament = Tournament.new(tournament_params)
-    # @bracket = @tournament.brackets.build(params[:bracket])
-    # # @bracket.bracket_number = 1
-    # @bracket.save
-    # @bracket = Bracket.last
-    # @match = @bracket.matches.build(params[:match])
-    # # @match.match_number = 1
-    # @match.save
     if @tournament.save
       redirect_to @tournament
     else
@@ -50,17 +44,15 @@ class TournamentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_tournament
       @tournament = Tournament.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def tournament_params
-      params.require(:tournament).permit(:title, :description, :signUpDate, :gameDate)
+    def correct_user
+      redirect_to tournaments_path unless current_player.admin?
     end
 
-    def bracket_params
-      params.require(:bracket).permit(:bracket_number, :tournament_id)
+    def tournament_params
+      params.require(:tournament).permit(:title, :description, :signUpDate, :gameDate)
     end
 end
