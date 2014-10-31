@@ -8,4 +8,10 @@ class ActivitiesController < ApplicationController
 			redirect_to @tournament, notice: 'Error'
 		end
 	end	
+
+	def destroy
+    @activity = current_player.activities.find(params[:id])
+    @activity.destroy 
+    redirect_to 'pages#dashboard', notice: "Removed from tournament"
+  end
 end

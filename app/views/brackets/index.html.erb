@@ -1,0 +1,10 @@
+<h1><%= @tournament.title %> </h1>
+<h2>Players</h2>
+
+<ul>
+	<% @activities.each do |activity| %>
+		<li>
+			<%= activity.player.evetag %>
+		</li>
+	<% end %>
+</ul>

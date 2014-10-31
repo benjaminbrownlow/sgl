@@ -1,13 +1,12 @@
 <div class="col-xs-12 col-sm-8 col-sm-offset-2 landing">
-  <h1><%= @tournament.title %></h1>
+  <h1><%= link_to @tournament.title, @tournament %></h1>
   <h2><%= @tournament.description %></h2>
   <h3><%= @tournament.signUpDate %></h3>
 
-  
-
-	<button> Sign Up</button><br>
+	
 	<% if player_signed_in? %>
+	<button><%= link_to 'Sign Up', activities_path(:tournament_id => @tournament), :method => :post %></button>
 	<% else %>
-	<%= link_to 'Or Create an Account', '#' %>
+	<button><%= link_to 'Create an Account to Join', new_player_registration_path %></button>
 	<% end %>
 </div>

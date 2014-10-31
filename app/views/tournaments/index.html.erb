@@ -19,7 +19,7 @@
     <%= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' } %>
 
     <% elsif player_signed_in? %>
-    Sign Up
+    <%= link_to 'Sign Up', activities_path(:tournament_id => tournament), :method => :post %>
     
     <% else %>
     
@@ -31,37 +31,3 @@
   <% end %>
 
 </div>
-
-
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Tournament</th>
-      <th>Description</th>
-      <th>Sign Up Deadline</th>
-      <th>Tournament Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tournaments.each do |tournament| %>
-      <tr>
-        <td><%= link_to tournament.title, tournament %></td>
-        <td><%= tournament.description %></td>
-        <td><%= tournament.signUpDate %></td>
-        <td><%= tournament.gameDate %></td>
-        <td><%= link_to 'Show', tournament %></td>
-        <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>
-        <td><%= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Tournament', new_tournament_path %>
-
---> 

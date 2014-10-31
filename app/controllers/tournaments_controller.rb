@@ -43,6 +43,7 @@ class TournamentsController < ApplicationController
     redirect_to tournaments_url, notice: 'Tournament was successfully destroyed.'
   end
 
+
   private
     def set_tournament
       @tournament = Tournament.find(params[:id])
