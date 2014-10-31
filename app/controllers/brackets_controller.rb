@@ -9,6 +9,9 @@ class BracketsController < ApplicationController
 	end
 
 	def build_init
+		@activities = Activity.where(:tournament_id => @tournament)
+		@player = @activities.player.evetag
+
 		
 	end
 end
