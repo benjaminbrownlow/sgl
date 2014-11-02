@@ -10,11 +10,11 @@ class TournamentsController < ApplicationController
   end
 
   def show
-    @players = @tournament.players
   end
 
   def new
     @tournament = Tournament.new
+    @bracket = Bracket.new
   end
 
 
@@ -23,10 +23,11 @@ class TournamentsController < ApplicationController
 
   def create    
     @tournament = Tournament.new(tournament_params)
+    @bracket = @tournament.brackets.build(params[:bracket])
     if @tournament.save
-      redirect_to @tournament
+      redirect_to @tournament, notice: 'Tournament created'
     else
-      render action: 'new'   
+      redirect_to @tournament, notice: 'Error'
     end
   end
 

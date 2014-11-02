@@ -2,5 +2,6 @@
 
 
 ### Developer Notes
-Currently in development. 1v1 EVE Online Tournaments.
+
+Activities - Players joining a tournament
 

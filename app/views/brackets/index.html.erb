@@ -1,10 +1,5 @@
-<h1><%= @tournament.title %> </h1>
-<h2>Players</h2>
+<!-- List of All Brackets Within the Tournament -->
 
-<ul>
-	<% @activities.each do |activity| %>
-		<li>
-			<%= activity.player.evetag %>
-		</li>
-	<% end %>
-</ul>
+<h1><%= @bracket.tournament %></h1>
+
+

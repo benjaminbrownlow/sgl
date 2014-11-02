@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031211548) do
+ActiveRecord::Schema.define(version: 20141102224446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,19 @@ ActiveRecord::Schema.define(version: 20141031211548) do
     t.integer  "tournament_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "bracket_id"
   end
+
+  add_index "activities", ["bracket_id"], name: "index_activities_on_bracket_id", using: :btree
+  add_index "activities", ["tournament_id"], name: "index_activities_on_tournament_id", using: :btree
 
   create_table "brackets", force: true do |t|
     t.integer  "tournament_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "brackets", ["tournament_id"], name: "index_brackets_on_tournament_id", using: :btree
 
   create_table "matches", force: true do |t|
     t.integer  "bracket_id"
