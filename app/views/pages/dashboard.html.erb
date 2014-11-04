@@ -25,13 +25,15 @@
 
 	<div class="col-xs-12 col-sm-7 col-sm-offset-5 playerStats">
 		<h1>Upcoming Tournaments</h1>
-		<ul>
-		  <% for activity in @player.activities %>
-		    <li>
-		      <%=h link_to activity.tournament.title, activity.tournament %>
-		    </li>
-		  <% end %>
-		</ul>
+			<% if @activity.any? %>
+				<ul>
+				<% @activity.each do |activity| %>
+					<li><%= activity.tournament.title %></li>
+				<% end %>
+				</ul>
+			<% else %>
+				<p>You're not signed up in any tournaments. Join one <%= link_to 'here', tournaments_path %>.</p>
+			<% end %>
 
 	</div>
 

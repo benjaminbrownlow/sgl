@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
   	@player = current_player
+  	@activity = Activity.where(:player_id => @player)
   end
   
 end

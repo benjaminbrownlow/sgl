@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+	# before_action :validate, only: [:create]
+
 	def create
 		@activity = current_player.activities.build(:tournament_id => params[:tournament_id])
 		@tournament = Tournament.find(params[:tournament_id])
@@ -9,9 +11,15 @@ class ActivitiesController < ApplicationController
 		end
 	end	
 
- # 	def destroy
- #    @activity = current_player.activities.find(params[:id])
- #    @activity.destroy 
- #    redirect_to 'pages#dashboard', notice: "Removed from tournament"
- #  end
+	private
+		def validate
+			@tournament = Tournament.find(params[:tournament_id])
+			@activity = Activity.where(:tournament_id => @tournament)
+			@player = current_player
+			if @activity.player = @player
+				redirect_to @tournament, notice: "You're already in this tournament"
+			end
+		end
+
+
 end

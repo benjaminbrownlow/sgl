@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :players
+  
   resources :activities
   resources :tournaments do 
     resources :brackets do
@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   end
 
   devise_for :players
-
+  resources :profiles
+  
   root 'pages#home'
   get "dashboard" => "pages#dashboard"
 

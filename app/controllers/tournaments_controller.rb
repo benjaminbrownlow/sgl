@@ -10,6 +10,8 @@ class TournamentsController < ApplicationController
   end
 
   def show
+    @bracket = Bracket.find_by(:tournament_id => @tournament)
+    @activities = Activity.where(:tournament_id => @tournament)
   end
 
   def new
