@@ -20,6 +20,4 @@ class ActivitiesController < ApplicationController
 				redirect_to @tournament, notice: "You're already in this tournament"
 			end
 		end
-
-
 end
