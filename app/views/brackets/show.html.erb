@@ -4,7 +4,7 @@
 <h2><%= link_to 'Bracket 1', tournament_bracket_path(@tournament, @bracket) %></h2>
 
 
-<% @match.each do |match| %>
+<% @match.try(:each) do |match| %>
 	<div>
 		<% @first = match.player_ids.first 
 			 @last = match.player_ids.last %>
