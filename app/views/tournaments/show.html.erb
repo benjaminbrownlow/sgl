@@ -11,7 +11,7 @@
 	<p><%= @tournament.description %></p>
 	
 	
-	<% if player_signed_in? &&  current_player.try(:admin?)%>
+	<% if player_signed_in? && current_player.try(:admin?)%>
 		<button><%= link_to 'Edit This Tournament', edit_tournament_path(@tournament) %></button>
 	<% else %>
 		<button><%= link_to 'Join This Tournament', activities_path(:tournament_id => @tournament), :method => :post %></button>
@@ -21,8 +21,12 @@
 
 <div class="col-xs-12 col-sm-10 col-sm-offset-1 landing">
 	
-	<% @activities.each do |activity| %>
-		<%= activity.player.evetag %> <br>
+	<% if @activities.any? %>
+		<h1>Upcoming Players</h1>
+			<% @activities.each do |activity| %>
+				<%= activity.player.evetag %> <br>
+			<% end %>
+		<% else %>
 	<% end %>
 </div>
 
