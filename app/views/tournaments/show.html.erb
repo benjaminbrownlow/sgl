@@ -1,1 +1,31 @@
+<p id="notice"><%= notice %></p>
 
+
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 landing">
+	<h1><%= @tournament.title %></h1>
+
+	<div style="border: 1px solid red; height: 400px; line-height: 400px;">
+		Battle Background
+	</div>
+	<h2><%= @tournament.gameDate %></h2>
+	<p><%= @tournament.description %></p>
+	
+	
+	<% if player_signed_in? && current_player.try(:admin?)%>
+		<button><%= link_to 'Edit This Tournament', edit_tournament_path(@tournament) %></button>
+	<% else %>
+		<button><%= link_to 'Join This Tournament', activities_path(:tournament_id => @tournament), :method => :post %></button>
+	<% end %>
+</div>
+
+
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 landing">
+	
+	<% if @activities.any? %>
+		<h1>Upcoming Players</h1>
+			<% @activities.each do |activity| %>
+				<%= activity.player.evetag %> <br>
+			<% end %>
+		<% else %>
+	<% end %>
+</div>

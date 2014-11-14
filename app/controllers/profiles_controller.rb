@@ -5,6 +5,6 @@ class ProfilesController < ApplicationController
 	end
 
 	def show
-
+		@player = Player.find(params[:id])
 	end
 end
