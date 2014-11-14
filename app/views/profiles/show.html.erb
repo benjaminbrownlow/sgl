@@ -1,1 +1,41 @@
-<h1><%= @player.evetag %></h1>
+
+	<div id="playerProfile" class="col-xs-12 col-sm-3 col-sm-offset-1">
+		<%= image_tag("avatar01.png") %>
+		<h3><%= @player.evetag %></h3>
+	</div>
+
+	<div class="col-xs-12 col-sm-7 col-sm-offset-1 playerStats">
+		<h1>Player Stats</h1>
+		<div class="playerScore">
+			<h1><%= @player.totalGames %></h1>
+			<h2>Total Games</h2>
+		</div>
+		<div class="playerScore">
+			<h1><%= @player.totalWins %></h1>
+			<h2>Wins</h2>
+		</div>		
+		<div class="playerScore">
+			<h1><%= @player.totalGames - @player.totalWins %></h1>
+			<h2>Loses</h2>
+		</div>
+	</div>
+
+
+
+	<div class="col-xs-12 col-sm-7 col-sm-offset-5 playerStats">
+		<h1>Upcoming Tournaments</h1>
+			<% if @activity.any? %>
+				<ul>
+				<% @activity.each do |activity| %>
+					<li><%= activity.tournament.title %></li>
+				<% end %>
+				</ul>
+			<% else %>
+				<p>This player hasn't signed up for any tournaments.</p>
+			<% end %>
+
+	</div>
+
+
+
+<div class="clear"></div>

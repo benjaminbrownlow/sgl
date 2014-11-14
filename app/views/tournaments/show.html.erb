@@ -4,7 +4,7 @@
 <div class="col-xs-12 col-sm-10 col-sm-offset-1 landing">
 	<h1><%= @tournament.title %></h1>
 
-	<div style="border: 1px solid red; height: 400px; line-height: 400px;">
+	<div style="border: 1px solid red; height: 400px; line-height: 400px; margin-top:20px">
 		Battle Background
 	</div>
 	<h2><%= @tournament.gameDate %></h2>
@@ -24,7 +24,7 @@
 	<% if @activities.any? %>
 		<h1>Upcoming Players</h1>
 			<% @activities.each do |activity| %>
-				<%= activity.player.evetag %> <br>
+				<%= link_to activity.player.evetag, profile_path(activity.player) %> <br>
 			<% end %>
 		<% else %>
 	<% end %>

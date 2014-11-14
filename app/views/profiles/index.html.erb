@@ -2,7 +2,7 @@
 	<h1>Player List</h1>
 	<ul>
 		<% @players.each do |player| %>
-			<li> <%= link_to player.evetag, profile_path %> <li>
+			<li> <%= link_to player.evetag, profile_path(player) %> <li>
 		<% end %>
 	</ul>
 </div>

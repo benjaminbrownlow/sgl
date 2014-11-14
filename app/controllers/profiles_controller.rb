@@ -6,5 +6,6 @@ class ProfilesController < ApplicationController
 
 	def show
 		@player = Player.find(params[:id])
+  	@activity = Activity.where(:player_id => @player)
 	end
 end

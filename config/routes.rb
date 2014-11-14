@@ -10,13 +10,11 @@ Rails.application.routes.draw do
 
   devise_for :players
   
-  # resources :profiles, only: [:index, :show]
+  resources :profiles, only: [:index, :show]
   
   root 'pages#home'
   get 'dashboard' => 'pages#dashboard'
-  get 'profiles' => 'profiles#index'
-  get 'profile' => 'profiles#show'
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
