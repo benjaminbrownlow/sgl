@@ -4,8 +4,8 @@
 <div class="col-xs-12 col-sm-10 col-sm-offset-1 landing">
 	<h1><%= @tournament.title %></h1>
 
-	<div style="border: 1px solid red; height: 400px; line-height: 400px; margin-top:20px">
-		Battle Background
+	<div style=" height: 400px; margin-top:20px">
+		<%= image_tag @tournament.image.url, :style => 'display: block; width: 400px; height: auto; margin-left: auto; margin-right: auto;' %>
 	</div>
 	<h2><%= @tournament.gameDate %></h2>
 	<p><%= @tournament.description %></p>

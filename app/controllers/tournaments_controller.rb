@@ -57,6 +57,6 @@ class TournamentsController < ApplicationController
     end
 
     def tournament_params
-      params.require(:tournament).permit(:title, :description, :signUpDate, :gameDate)
+      params.require(:tournament).permit(:title, :description, :signUpDate, :gameDate, :image)
     end
 end

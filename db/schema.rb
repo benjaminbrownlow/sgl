@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104181737) do
+ActiveRecord::Schema.define(version: 20141115220945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,14 +69,18 @@ ActiveRecord::Schema.define(version: 20141104181737) do
 
   create_table "tournaments", force: true do |t|
     t.string   "title"
-    t.integer  "totalPlayers", default: 0,                     null: false
-    t.integer  "totalMatches", default: 0,                     null: false
+    t.integer  "totalPlayers",       default: 0,                     null: false
+    t.integer  "totalMatches",       default: 0,                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
-    t.datetime "signUpDate",   default: '2014-10-09 00:17:17', null: false
-    t.datetime "gameDate",     default: '2014-10-11 14:59:42', null: false
+    t.datetime "signUpDate",         default: '2014-10-09 00:17:17', null: false
+    t.datetime "gameDate",           default: '2014-10-11 14:59:42', null: false
     t.integer  "players_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "tournaments", ["players_id"], name: "index_tournaments_on_players_id", using: :btree
