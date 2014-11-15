@@ -12,8 +12,19 @@ Rails.application.routes.draw do
   
   resources :profiles, only: [:index, :show]
   
-  root 'pages#home'
+
+  authenticated :player do
+    root :to => "pages#dashboard", as: :authenticated_root
+  end
+
+  root :to => 'pages#home'
+  
   get 'dashboard' => 'pages#dashboard'
+
+  
+  
+
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
