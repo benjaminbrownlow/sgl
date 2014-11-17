@@ -7,7 +7,6 @@ class MatchesController < ApplicationController
 	def show
 	end
 
-
 	def create
 		@total = @activities.count/2 
 		@players = Array.new
