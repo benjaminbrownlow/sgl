@@ -24,15 +24,14 @@ gem 'bootstrap-sass'
 gem 'devise', '~> 3.3.0'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'pg'
 
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
-	gem 'pg'
 end
 
 group :production do
-	gem 'pg'
 	gem 'rails_12factor'
 end
 
