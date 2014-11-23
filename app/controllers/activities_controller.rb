@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+	before_action :check, only: :create
 
 	def create
 		@activity = current_player.activities.build(:tournament_id => params[:tournament_id])
@@ -15,4 +16,13 @@ class ActivitiesController < ApplicationController
 		@activity.destroy
 		redirect_to dashboard_path, notice: "You backed out of the tournament."
 	end
+
+	private
+		def check
+			@player = current_player
+			@check = Activity.find_by(player_id: @player.id)
+			if @check.nil?
+				redirect_to @tournament, notice: "You're already in this tournament."
+			end
+		end
 end

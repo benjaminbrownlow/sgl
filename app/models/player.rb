@@ -1,4 +1,7 @@
 class Player < ActiveRecord::Base
+	validates :email, presence: true, uniqueness: true
+	validates :evetag, presence: true, uniqueness: true
+
 	has_many :activities
 	has_many :tournaments, through: :activities
   belongs_to :bracket
