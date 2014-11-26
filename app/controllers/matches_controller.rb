@@ -13,6 +13,10 @@ class MatchesController < ApplicationController
 	def update
 	end
 
+	def start
+		Match.init
+	end
+
 
 	private
 		def set_matches
@@ -21,3 +25,7 @@ class MatchesController < ApplicationController
 			@activities = Activity.where(:tournament_id => @tournament)
 		end
 end
+
+
+# Tournament: 2
+# bracket: 2
