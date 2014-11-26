@@ -3,10 +3,10 @@ class Match < ActiveRecord::Base
 	# has_many :players
 
 	def self.init
-		# @tournament = Tournament.find(params[:tournament_id])
-		# @bracket = Bracket.find_by(:tournament_id => @tournament)
-		# @activities = Activity.where(:tournament_id => @tournament)
-		
+		@tournament = Tournament.find(params[:tournament_id])
+		@bracket = Bracket.find_by(:tournament_id => @tournament)
+		@activities = Activity.where(:tournament_id => @tournament)
+
 		# Find total number of players in tournament
 		@total = @activities.count/2 
 		@players = Array.new 
