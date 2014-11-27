@@ -1,5 +1,5 @@
 class TournamentsController < ApplicationController
-  before_action :set_tournament, only: [:show, :edit, :update, :destroy, :initialize]
+  before_action :set_tournament, only: [:show, :edit, :update, :destroy, :initialize_match]
   before_action :authenticate_player!, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
 
@@ -46,11 +46,11 @@ class TournamentsController < ApplicationController
     redirect_to tournaments_url, notice: 'Tournament was successfully destroyed.'
   end
 
-  def initialize
+  def initialize_match
     # @tournament = Tournament.find(params[:tournament_id])
     @bracket = Bracket.find_by(:tournament_id => @tournament)
     @activities = Activity.where(:tournament_id => @tournament)
-
+    
     # Find total number of players in tournament
     @total = @activities.count/2 
     @players = Array.new 
@@ -72,6 +72,7 @@ class TournamentsController < ApplicationController
         @players.delete(gamer)
       end
     end
+    redirect_to tournaments_path, notice: "Matches initalized."
   end
 
 

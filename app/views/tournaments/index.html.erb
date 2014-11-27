@@ -3,20 +3,24 @@
   <h1>Upcoming Tournaments</h1>
   
   <% @tournaments.each do |tournament| %>
-    <div style="float:left; width: 30%;">
+    <div style="float:left; margin: 0 10px;">
       <%= link_to tournament.title, tournament %>
     </div>
 
-    <div style="float:left; width: 30%;">
+    <div style="float:left; margin: 0 10px;">
       <%= tournament.signUpDate %>
     </div>
 
-    <div style="float:left; width: 30%;">
+    <div style="float:left; margin: 0 10px;">
       <% if player_signed_in? && current_player.try(:admin?)%>
-        <%= link_to 'Edit', edit_tournament_path(tournament) %>
-        <%= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_tournament_path(tournament) %> |
+        <%= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' } %> |
+        <%= link_to 'Initialize', initialize_match_tournament_path(tournament), method: :put %>
+      
       <% elsif player_signed_in? %>
+      
         <%= link_to 'Sign Up', activities_path(:tournament_id => tournament), :method => :post %>
+
       <% else %>
         <%= link_to 'Log In to Join', new_player_session_path %>
       <% end %>
