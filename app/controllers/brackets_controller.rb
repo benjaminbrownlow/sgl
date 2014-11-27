@@ -9,6 +9,8 @@ class BracketsController < ApplicationController
 	end
 
 	
+
+	
 	private
 		def set_brackets
 			@tournament = Tournament.find(params[:tournament_id])

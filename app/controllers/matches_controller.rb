@@ -14,6 +14,7 @@ class MatchesController < ApplicationController
 	end
 
 
+
 	private
 		def set_matches
 			@tournament = Tournament.find(params[:tournament_id])
