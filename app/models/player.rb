@@ -14,14 +14,5 @@ class Player < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
-  def self.set_activities
-     @player = Player.all
-     @player.each do |player|
-      @activity = player.activities.build(:tournament_id => 2)
-      @activity.save
-     end
-  end
-
 end
 
