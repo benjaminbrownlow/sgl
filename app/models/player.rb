@@ -14,7 +14,7 @@ class Player < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
- def match
+  def match
     # Match.where('player_ids @> ARRAY[?]', id).first
     Match.where('player_ids @> ARRAY[?]', id).all
   end
