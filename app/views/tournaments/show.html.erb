@@ -16,14 +16,16 @@
 	<% end %>
 </div>
 
-
-<div class="col-xs-12 col-sm-10 col-sm-offset-1 landing">
-	
-	<% if @activities.any? %>
-		<h1>Upcoming Players</h1>
-			<% @activities.each do |activity| %>
-				<%= link_to activity.player.evetag, profile_path(activity.player) %> <br>
-			<% end %>
-		<% else %>
-	<% end %>
-</div>
+<% if @tournament.signUpDate.past? %>
+	<%= render 'matches/matches' %>
+<% else %>
+	<div class="col-xs-12 col-sm-10 col-sm-offset-2 landing">	
+		<% if @activities.any? %>
+			<h1>Upcoming Players</h1>
+				<% @activities.each do |activity| %>
+					<%= link_to activity.player.evetag, profile_path(activity.player) %> <br>
+				<% end %>
+			<% else %>
+		<% end %>
+	</div>
+<% end %>

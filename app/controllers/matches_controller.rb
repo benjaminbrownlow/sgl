@@ -2,6 +2,7 @@ class MatchesController < ApplicationController
 	before_action :set_matches
 	
 	def index
+		@match = Match.where(bracket_id: @bracket)		
 	end
 
 	def show
@@ -12,7 +13,6 @@ class MatchesController < ApplicationController
 
 	def update
 	end
-
 
 
 	private

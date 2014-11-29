@@ -27,7 +27,7 @@
 			<% if @activity.any? %>
 				<ul>
 				<% @activity.each do |activity| %>
-					<li><%= activity.tournament.title %></li>
+					<li><%= link_to activity.tournament.title, activity.tournament %></li>
 				<% end %>
 				</ul>
 			<% else %>

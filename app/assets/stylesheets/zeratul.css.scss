@@ -187,3 +187,23 @@ textarea:focus, input:focus {
 .clear {
 	clear:both;
 }
+
+
+// MATCHES
+
+.match {
+	height: 220px;
+	margin: 20px 0px;
+	padding: 20px 0px;
+	h2 {
+		line-height: 4;
+	}
+	h3 {
+		margin-top: -40px;
+	}
+	img {
+		display: block;
+		margin: 10px auto;
+	}
+}
+

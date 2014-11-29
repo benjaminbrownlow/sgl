@@ -1,0 +1,28 @@
+<h1>Matches#index</h1>
+
+
+<% @match.each do |match| %>
+	<% @first = match.player_ids.first
+			@second = match.player_ids.last
+			@playerone = Player.find_by(id:@first)
+			@playertwo = Player.find_by(id:@second)
+	%>
+
+	<div style=" clear: both; margin: 20px; padding: 20px;">
+		<div style="float:left; margin: 0px 10px;">
+			<p>Game </p>
+			<p><%= match.matchDate.strftime('%I:%M %p') %></p>
+		</div>
+		<div style="float:left; margin: 0px 10px;">
+			<%= link_to image_tag('avatar01.png'), profile_path(@playerone) %>
+			<p><%= link_to @playerone.evetag, profile_path(@playerone) %></p>
+		</div>
+		<div style="float:left; margin: 0px 10px;">
+			<p>vs</p>
+		</div>
+		<div style="float:left; margin: 0px 10px;">
+			<%= link_to image_tag('avatar01.png'), profile_path(@playertwo)  %>
+			<p><%= link_to @playertwo.evetag, profile_path(@playertwo)%></p>
+		</div>
+	</div>
+<% end %>

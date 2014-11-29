@@ -7,11 +7,13 @@ class TournamentsController < ApplicationController
   def index
     @tournaments = Tournament.all
     @bracket = Bracket.all
+
   end
 
   def show
     @bracket = Bracket.find_by(:tournament_id => @tournament)
     @activities = Activity.where(:tournament_id => @tournament)
+    @match = Match.where(bracket_id: @bracket)    
   end
 
   def new
