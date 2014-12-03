@@ -7,12 +7,19 @@
 
 <% @matches.each do |match| %>
 	<% if match.matchDate.past? %>
-	<div class="col-xs-12 col-sm-7 col-sm-offset-1 playerStats" style="border: 1px solid red;">
-		<p>You played in a match. did you win?</p>
-		<%= link_to 'Yes', '#' %>
-		<br>
-		<%= link_to 'No', '#' %>
-	</div>
+		<% @players = match.player_ids 
+			 @players.each do |id|
+			 	if id != @player.id
+			 		@opponent = Player.find_by(id:id)
+			 	end
+			 end
+	  %>
+		<div class="col-xs-12 col-sm-7 col-sm-offset-1 playerStats" style="border: 1px solid #91C63E;">
+			<p>You played in a match against <%= @opponent.evetag %>. Who won this game?</p>
+			<%= link_to @player.evetag, '#' %>
+			<br>
+			<%= link_to @opponent.evetag, '#' %>
+		</div>
 	<% end %>
 <% end %>
 
@@ -45,7 +52,14 @@
 			<h2>MATCHES</h2>
 			<ul>
 				<% @matches.each do |match| %>
-					<li> <%= match.matchDate %></li>
+					<% @players = match.player_ids 
+						 @players.each do |id|
+						 	if id != @player.id
+						 		@opponent = Player.find_by(id:id)
+						 	end
+						 end
+				  %>
+					<li> vs <%= @opponent.evetag %> | <%= match.matchDate %></li>
 				<% end %>
 			</ul>
 

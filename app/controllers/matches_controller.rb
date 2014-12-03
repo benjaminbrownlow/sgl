@@ -14,6 +14,10 @@ class MatchesController < ApplicationController
 	def update
 	end
 
+	def set_winner
+		
+	end
+
 
 	private
 		def set_matches

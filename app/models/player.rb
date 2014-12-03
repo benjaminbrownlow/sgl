@@ -18,7 +18,6 @@ class Player < ActiveRecord::Base
     # Match.where('player_ids @> ARRAY[?]', id).first
     Match.where('player_ids @> ARRAY[?]', id).all
   end
-
-
+  
 end
 

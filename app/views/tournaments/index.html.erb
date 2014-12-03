@@ -16,8 +16,10 @@
         <%= link_to 'Edit', edit_tournament_path(tournament) %> |
         <%= link_to 'Destroy', tournament, method: :delete, data: { confirm: 'Are you sure?' } %> |
         <%= link_to 'Initialize Matches', initialize_match_tournament_path(tournament), method: :put %>      
+
       <% elsif player_signed_in? %>      
         <%= link_to 'Sign Up', activities_path(:tournament_id => tournament), :method => :post %>
+        
       <% else %>
         <%= link_to 'Log In to Join', new_player_session_path %>
       <% end %>

@@ -9,6 +9,6 @@ class PagesController < ApplicationController
   	@activity = Activity.where(:player_id => @player)
   	@matches = @player.match
   end
-  
+ 
 end
 	

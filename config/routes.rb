@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     end
     resources :brackets do
       resources :matches
+        member do
+          put 'set_winner'
+        end
     end    
   end
 
