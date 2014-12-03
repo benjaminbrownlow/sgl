@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   resources :activities
+  
   resources :tournaments do 
     member do
       put 'initialize_match'
