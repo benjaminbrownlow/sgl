@@ -1,8 +1,9 @@
 <!-- Show Current Brackets Within the Tournament -->
 
 <h1><%= link_to @tournament.title, @tournament %></h1>
-<h2><%= link_to 'Bracket 1', tournament_bracket_path(@tournament, @bracket) %></h2>
+<h2><%= link_to 'Bracket 1', bracket_path(@bracket) %></h2>
 
+<%= render 'matches/matches' %>
 
 
 

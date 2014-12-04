@@ -9,12 +9,10 @@ class BracketsController < ApplicationController
 	end
 
 	
-
-	
 	private
 		def set_brackets
-			@tournament = Tournament.find(params[:tournament_id])
-			@bracket = Bracket.find_by(:tournament_id => @tournament)
+			@bracket = Bracket.find_by(params[:bracket_id])
+			@tournament = @bracket.tournament
 			@activities = Activity.where(:tournament_id => @tournament)
 		end
 end

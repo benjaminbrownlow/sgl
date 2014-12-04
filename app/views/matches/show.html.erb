@@ -1,2 +1,28 @@
-<h2>Matches#show</h2>
+<h1><%= link_to @tournament.title, tournament_path(@tournament) %></h1>
+<h2><%= link_to 'Back to Bracket', bracket_path(@bracket) %></h2>
+
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 landing">
+	<div class="match">
+		<div class="col-sm-2" style="float:left; margin: 0px 10px;" class="blue">
+			<h2>Match</h2>
+			<h3><%= @match.matchDate.strftime('%I:%M %p') %></h3>
+		</div>
+
+		<div class="col-sm-3" style="float:left; margin: 0px 10px;">
+			<%= link_to image_tag('avatar01.png'), profile_path(@playerone) %>
+			<p><%= link_to @playerone.evetag, profile_path(@playerone) %></p>
+		</div>
+
+		<div class="col-sm-1" style="float:left; margin: 0px 10px;">
+			<h2>vs</h2>
+		</div>
+
+		<div class="col-sm-3" style="float:left; margin: 0px 10px;">
+			<%= link_to image_tag('avatar01.png'), profile_path(@playertwo)  %>
+			<p><%= link_to @playertwo.evetag, profile_path(@playertwo)%></p>
+		</div>
+
+	</div>
+</div>
+
 

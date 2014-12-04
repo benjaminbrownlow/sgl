@@ -16,9 +16,9 @@
 	  %>
 		<div class="col-xs-12 col-sm-7 col-sm-offset-1 playerStats" style="border: 1px solid #91C63E;">
 			<p>You played in a match against <%= @opponent.evetag %>. Who won this game?</p>
-			<%= link_to @player.evetag, '#' %>
+			<%= link_to @player.evetag, set_winner_match_path(match), method: :put %>
 			<br>
-			<%= link_to @opponent.evetag, '#' %>
+			<%= link_to @opponent.evetag, set_winner_match_path(match), method: :put %>
 		</div>
 	<% end %>
 <% end %>

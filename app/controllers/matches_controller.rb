@@ -1,11 +1,17 @@
 class MatchesController < ApplicationController
-	before_action :set_matches
+	before_action :set_matches, except: [:show]
 	
 	def index
-		@match = Match.where(bracket_id: @bracket)		
 	end
 
 	def show
+		@match = Match.find(params[:id])
+		@first = @match.player_ids.first
+		@second = @match.player_ids.last
+		@playerone = Player.find_by(id:@first)
+		@playertwo = Player.find_by(id:@second)
+		@tournament = @match.bracket.tournament
+		@bracket = @match.bracket
 	end
 
 	def create
@@ -21,8 +27,7 @@ class MatchesController < ApplicationController
 
 	private
 		def set_matches
-			@tournament = Tournament.find(params[:tournament_id])
-			@bracket = Bracket.find_by(:tournament_id => @tournament)
-			@activities = Activity.where(:tournament_id => @tournament)
+			@bracket = Bracket.find(params[:bracket_id])
+			@match = Match.where(bracket_id: @bracket)		
 		end
 end
