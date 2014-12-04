@@ -15,19 +15,6 @@ Rails.application.routes.draw do
     end
   end
 
-
-  # resources :tournaments do 
-  #   member do
-  #     put 'initialize_match'
-  #   end
-  #   resources :brackets do
-  #     resources :matches
-  #       member do
-  #         put 'set_winner'
-  #       end
-  #   end    
-  # end
-
   devise_for :players
   
   resources :profiles, only: [:index, :show]
