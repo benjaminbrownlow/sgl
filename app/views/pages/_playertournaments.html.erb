@@ -1,0 +1,38 @@
+<h1>Upcoming Tournaments</h1>
+	<% if @activity.any? %>
+		<ul>
+		<% @activity.each do |activity| %>
+			<li><strong><%= link_to activity.tournament.title, activity.tournament %></strong> | <%= link_to 'Back Out', activity, :method => :delete %></li>
+		<% end %>
+		</ul>
+	
+		<h2>MATCHES</h2>
+		<ul>
+			<% @matches.each do |match| 
+				 	@players = match.player_ids 
+				 	@players.each do |id|
+					 	if id != @player.id
+					 		@opponent = Player.find_by(id:id)
+					 	end
+				  end 
+		  %>
+				<% if match.matchDate.past? %>					
+					<% if match.winner.nil? %>
+						<li>
+							You played in a match against <%= @opponent.evetag %> on <%= match.matchDate %>. Who won this game?
+							<br>
+							<%= link_to @player.evetag, player_win_match_path(match), method: :put %> |
+							
+							<%= link_to @opponent.evetag, opponent_win_match_path(match), method: :put %>
+						</li>
+					<% else %>
+						<li><%= match.matchDate %> | <span style="text-transform: uppercase;">Winner: <%= match.winner %></span></li>	
+					<% end %>
+				<% else %>
+					<li> vs <%= @opponent.evetag %> | <%= match.matchDate %></li>
+				<% end %>
+			<% end %>
+		</ul>
+	<% else %>
+		<p>You're not signed up in any tournaments. Join one <%= link_to 'here', tournaments_path %>.</p>
+	<% end %>

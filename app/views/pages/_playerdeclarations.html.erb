@@ -1,0 +1,17 @@
+<% @matches.each do |match| %>
+	<% if match.matchDate.past? %>
+		<% @players = match.player_ids 
+			 @players.each do |id|
+			 	if id != @player.id
+			 		@opponent = Player.find_by(id:id)
+			 	end
+			 end
+	  %>
+		<div class="col-xs-12 col-sm-7 col-sm-offset-1 playerStats" id="declaration" style="border: 1px solid #91C63E; padding: 10px;">
+			<p>You played in a match against <%= @opponent.evetag %>. Who won this game?</p>
+			<%= link_to @player.evetag, player_win_match_path(match), method: :put %>
+			<br>
+			<%= link_to @opponent.evetag, opponent_win_match_path(match), method: :put %>
+		</div>
+	<% end %>
+<% end %>

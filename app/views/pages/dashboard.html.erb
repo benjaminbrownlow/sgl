@@ -1,74 +1,13 @@
-
 <div id="playerProfile" class="col-xs-12 col-sm-3 col-sm-offset-1">
-	<%= image_tag("avatar01.png") %>
-	<h3><%= @player.evetag %></h3>
-	<%= link_to 'Edit Profile', edit_player_registration_path %>
+	<%= render 'playerprofile' %>
 </div>
 
-<% @matches.each do |match| %>
-	<% if match.matchDate.past? %>
-		<% @players = match.player_ids 
-			 @players.each do |id|
-			 	if id != @player.id
-			 		@opponent = Player.find_by(id:id)
-			 	end
-			 end
-	  %>
-		<div class="col-xs-12 col-sm-7 col-sm-offset-1 playerStats" style="border: 1px solid #91C63E;">
-			<p>You played in a match against <%= @opponent.evetag %>. Who won this game?</p>
-			<%= link_to @player.evetag, set_winner_match_path(match), method: :put %>
-			<br>
-			<%= link_to @opponent.evetag, set_winner_match_path(match), method: :put %>
-		</div>
-	<% end %>
-<% end %>
-
 <div class="col-xs-12 col-sm-7 col-sm-offset-1 playerStats">
-	<h1>Player Stats</h1>
-	<div class="playerScore">
-		<h1><%= @player.totalGames %></h1>
-		<h2>Total Games</h2>
-	</div>
-	<div class="playerScore">
-		<h1><%= @player.totalWins %></h1>
-		<h2>Wins</h2>
-	</div>		
-	<div class="playerScore">
-		<h1><%= @player.totalGames - @player.totalWins %></h1>
-		<h2>Loses</h2>
-	</div>
+	<%= render 'playerstats' %>
 </div>
 
 <div class="col-xs-12 col-sm-7 col-sm-offset-5 playerStats">
-	<h1>Upcoming Tournaments</h1>
-
-		<% if @activity.any? %>
-			<ul>
-			<% @activity.each do |activity| %>
-				<li><strong><%= link_to activity.tournament.title, activity.tournament %></strong> | <%= link_to 'Back Out', activity, :method => :delete %></li>
-			<% end %>
-			</ul>
-
-			<h2>MATCHES</h2>
-			<ul>
-				<% @matches.each do |match| %>
-					<% @players = match.player_ids 
-						 @players.each do |id|
-						 	if id != @player.id
-						 		@opponent = Player.find_by(id:id)
-						 	end
-						 end
-				  %>
-					<li> vs <%= @opponent.evetag %> | <%= match.matchDate %></li>
-				<% end %>
-			</ul>
-
-		<% else %>
-			<p>You're not signed up in any tournaments. Join one <%= link_to 'here', tournaments_path %>.</p>
-		<% end %>
-
+	<%= render 'playertournaments' %>
 </div>
-
-
 
 <div class="clear"></div>
