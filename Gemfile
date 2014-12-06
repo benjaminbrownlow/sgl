@@ -25,6 +25,7 @@ gem 'devise', '~> 3.3.0'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'pg'
+gem 'unicorn'
 
 
 group :development, :test do
