@@ -26,6 +26,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'pg'
 gem 'unicorn'
+gem 'thin'
 
 
 group :development, :test do
