@@ -49,32 +49,40 @@ class TournamentsController < ApplicationController
   end
 
   def initialize_match
-    # @tournament = Tournament.find(params[:tournament_id])
     @bracket = Bracket.find_by(:tournament_id => @tournament)
     @activities = Activity.where(:tournament_id => @tournament)
-    
-    # Find total number of players in tournament
-    @total = @activities.count/2 
-    @players = Array.new 
-    @gamer = Array.new
 
     # Add all players to array
+    @players = Array.new 
     @activities.each do |activity| 
       @players << activity.player_id
     end
+
+    # Find total number of players in tournament
+    @total = @activities.count/2 
+    if @total.odd?
+      @total = @total -1
+    end
+
+    @check = Match.where(bracket_id:@bracket)
 
     # Take 2 players and create a match
     @total.times do
       @match = @bracket.matches.build 
         @gamers = @players.sample(2)
         @match.player_ids = @gamers
-        @match.matchDate = @tournament.gameDate
+        if @check.last.blank?
+          @match.matchDate = @tournament.gameDate
+        else
+          @match.matchDate = @check.last.matchDate + 15.minutes
+        end
       @match.save
       @gamers.each do |gamer|
         @players.delete(gamer)
       end
     end
-    redirect_to tournaments_path, notice: "Matches initalized."
+    
+    redirect_to @tournament, notice: "Matches initalized."
   end
 
 

@@ -7,7 +7,6 @@ class BracketsController < ApplicationController
 	def show
 		@match = Match.where(:bracket_id => @bracket)
 	end
-
 	
 	private
 		def set_brackets
