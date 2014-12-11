@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :tournaments, shallow:true do
     member do
       put 'initialize_match'
+      put 'ascend'
     end
     resources :brackets do
       resources :matches do

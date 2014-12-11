@@ -1,9 +1,36 @@
 <!-- List of All Brackets Within the Tournament -->
 
 <h1><%= link_to @bracket.tournament.title, @tournament %></h1>
-<h2><%= link_to 'Bracket 1', bracket_path(@bracket) %></h2>
-<% @activities.try(:each) do |activity| %>
-	<%= activity.player.evetag %> <br>
+
+<% @brackets.each do |bracket| %>
+	<h1>Bracket <%= bracket.id %></h1>
+	<% bracket.matches.each do |match| %>
+		<% @first = match.player_ids.first
+				@second = match.player_ids.last
+				@playerone = Player.find_by(id:@first)
+				@playertwo = Player.find_by(id:@second)
+		%>
+		<div class="match">
+			<div class="col-sm-2" style="float:left; margin: 0px 10px;" class="blue">
+				<h2>Match</h2>
+				<h3><%= match.matchDate.strftime('%I:%M %p') %></h3>
+			</div>
+
+			<div class="col-sm-3" style="float:left; margin: 0px 10px;">
+				<%= link_to image_tag('avatar01.png'), profile_path(@playerone) %>
+				<p><%= link_to @playerone.evetag, profile_path(@playerone) %></p>
+			</div>
+
+			<div class="col-sm-1" style="float:left; margin: 0px 10px;">
+				<h2>vs</h2>
+			</div>
+
+			<div class="col-sm-3" style="float:left; margin: 0px 10px;">
+				<%= link_to image_tag('avatar01.png'), profile_path(@playertwo)  %>
+				<p><%= link_to @playertwo.evetag, profile_path(@playertwo)%></p>
+			</div>
+		</div>
+	<% end %>
 <% end %>
 
 

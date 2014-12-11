@@ -1,5 +1,5 @@
 class TournamentsController < ApplicationController
-  before_action :set_tournament, only: [:show, :edit, :update, :destroy, :initialize_match]
+  before_action :set_tournament, only: [:show, :edit, :update, :destroy, :initialize_match, :ascend]
   before_action :authenticate_player!, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
 
@@ -11,8 +11,9 @@ class TournamentsController < ApplicationController
   end
 
   def show
-    @bracket = Bracket.find_by(:tournament_id => @tournament)
-    @activities = Activity.where(:tournament_id => @tournament)
+    @bracket = Bracket.find_by(tournament_id: @tournament)
+    @brackets = Bracket.where(tournament_id: @tournament)
+    @activities = Activity.where(tournament_id: @tournament)
     @match = Match.where(bracket_id: @bracket)    
   end
 
@@ -69,22 +70,65 @@ class TournamentsController < ApplicationController
     # Take 2 players and create a match
     @total.times do
       @match = @bracket.matches.build 
-        @gamers = @players.sample(2)
-        @match.player_ids = @gamers
-        if @check.last.blank?
-          @match.matchDate = @tournament.gameDate
-        else
-          @match.matchDate = @check.last.matchDate + 15.minutes
-        end
+      @gamers = @players.sample(2)
+      @match.player_ids = @gamers
+      if @check.last.blank?
+        @match.matchDate = @tournament.gameDate
+      else
+        @match.matchDate = @check.last.matchDate + 15.minutes
+      end
       @match.save
       @gamers.each do |gamer|
         @players.delete(gamer)
       end
     end
-    
+
     redirect_to @tournament, notice: "Matches initalized."
   end
 
+  def ascend
+    @bracket_last = Bracket.find_by(tournament_id: @tournament)
+    @matches = Match.where(bracket_id:@bracket_last)
+    @winners = Array.new
+    
+    # Collect winners from previous Bracket
+    @matches.each do |match|
+      winner = match.winner
+      # Convert back to ID
+      @player = Player.find_by(evetag:winner)
+      @winners << @player.id
+    end
+
+    @total = @winners.count/2
+
+    # Create new Bracket
+    @bracket = Bracket.new
+    @bracket.tournament_id = @tournament.id
+    @bracket.save
+
+    @check = Match.where(bracket_id:@bracket)
+
+    @total.times do
+      @match = @bracket.matches.build 
+      @gamers = @winners.sample(2)
+      @match.player_ids = @gamers
+      if @check.last.blank?
+        @match.matchDate = @tournament.gameDate
+      else
+        @match.matchDate = @check.last.matchDate + 15.minutes
+      end
+      @match.save
+      @gamers.each do |gamer|
+        @winners.delete(gamer)
+      end
+    end
+
+    redirect_to @bracket, notice: 'Ascended bracket.'
+  end
+
+  def declare_winner
+    
+  end
 
   private
     def set_tournament

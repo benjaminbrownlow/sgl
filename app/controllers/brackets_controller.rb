@@ -2,6 +2,7 @@ class BracketsController < ApplicationController
 	before_action :set_brackets
 
 	def index
+		@brackets = Bracket.where(tournament_id: @tournament)
 	end
 
 	def show

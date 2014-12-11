@@ -17,7 +17,7 @@
 </div>
 
 <% if @match.any? && @tournament.signUpDate.past? %>
-	<%= render 'matches/matches' %>
+	<%= render 'brackets/matches' %>
 <% else %>
 	<div class="col-xs-12 col-sm-10 col-sm-offset-1 landing">	
 		<% if @activities.any? %>
