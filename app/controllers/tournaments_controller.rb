@@ -30,6 +30,9 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.new(tournament_params)
     @bracket = @tournament.brackets.build(params[:bracket])
     if @tournament.save
+      @bracket = Bracket.last
+      @bracket.count = 1
+      @bracket.save
       redirect_to @tournament, notice: 'Tournament created'
     else
       redirect_to @tournament, notice: 'Error'
@@ -74,8 +77,10 @@ class TournamentsController < ApplicationController
       @match.player_ids = @gamers
       if @check.last.blank?
         @match.matchDate = @tournament.gameDate
+        @match.count = 1
       else
         @match.matchDate = @check.last.matchDate + 15.minutes
+        @match.count = @check.last.count.next
       end
       @match.save
       @gamers.each do |gamer|
@@ -93,17 +98,23 @@ class TournamentsController < ApplicationController
     
     # Collect winners from previous Bracket
     @matches.each do |match|
-      winner = match.winner
-      # Convert back to ID
-      @player = Player.find_by(evetag:winner)
-      @winners << @player.id
+      if match.flag?
+        # Check
+      else
+        winner = match.winner
+        # Convert back to ID
+        @player = Player.find_by(evetag:winner)
+        @winners << @player.id
+      end
     end
 
     @total = @winners.count/2
 
     # Create new Bracket
+    @bracket_count = @bracket_last.count
     @bracket = Bracket.new
     @bracket.tournament_id = @tournament.id
+    @bracket.count = @bracket_count.next
     @bracket.save
 
     @check = Match.where(bracket_id:@bracket)
@@ -114,8 +125,10 @@ class TournamentsController < ApplicationController
       @match.player_ids = @gamers
       if @check.last.blank?
         @match.matchDate = @tournament.gameDate
+        @match.count = 1
       else
         @match.matchDate = @check.last.matchDate + 15.minutes
+        @match.count = @check.last.count.next
       end
       @match.save
       @gamers.each do |gamer|

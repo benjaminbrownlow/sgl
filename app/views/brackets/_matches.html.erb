@@ -1,8 +1,8 @@
 <!-- List of All Brackets Within the Tournament -->
 
 <% @brackets.each do |bracket| %>
-	<h1 style="text-align: center;">Bracket <%= bracket.id %></h1>
-	<% bracket.matches.each do |match| %>
+	<h1 style="text-align: center;">Bracket <%= bracket.count %></h1>
+	<% bracket.matches.order("created_at asc").each do |match| %>
 		<% @first = match.player_ids.first
 				@second = match.player_ids.last
 				@playerone = Player.find_by(id:@first)
@@ -10,7 +10,7 @@
 		%>
 		<div class="match">
 			<div class="col-sm-2" style="float:left; margin: 0px 10px;" class="blue">
-				<h2>Match</h2>
+				<h2>Match <%= match.count %></h2>
 				<h3><%= match.matchDate.strftime('%I:%M %p') %></h3>
 			</div>
 
