@@ -1,5 +1,5 @@
 class TournamentsController < ApplicationController
-  before_action :set_tournament, only: [:show, :edit, :update, :destroy, :initialize_match, :ascend]
+  before_action :set_tournament, except: [:index, :new, :create]
   before_action :authenticate_player!, except: [:index, :show]
   before_action :correct_user, except: [:index, :show]
 
@@ -122,12 +122,16 @@ class TournamentsController < ApplicationController
         @winners.delete(gamer)
       end
     end
-
     redirect_to @bracket, notice: 'Ascended bracket.'
   end
 
   def declare_winner
-    
+    @bracket = Bracket.where(tournament_id:@tournament).last
+    @match = Match.where(bracket_id:@bracket).last
+    @tournament.winner = @match.winner
+    @tournament.save
+
+    redirect_to @tournament, notice: 'Declared winner.'
   end
 
   private

@@ -1,7 +1,7 @@
 <!-- List of All Brackets Within the Tournament -->
 
 <% @brackets.each do |bracket| %>
-	<h1>Bracket <%= bracket.id %></h1>
+	<h1 style="text-align: center;">Bracket <%= bracket.id %></h1>
 	<% bracket.matches.each do |match| %>
 		<% @first = match.player_ids.first
 				@second = match.player_ids.last

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       put 'initialize_match'
       put 'ascend'
+      put 'declare_winner'
     end
     resources :brackets do
       resources :matches do
