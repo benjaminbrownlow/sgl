@@ -16,10 +16,12 @@
 
 <div id="wrap">
 	<div class="container">
-    <% flash.each do |name, msg| %>
-      <%= content_tag(:div, msg, class: "#", id: "flash") %>
-    <% end %>
-    <br>
+    <div class="flash">
+      <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "#", id: "flash") %>
+      <% end %>
+    </div>
+    
 		<%= yield %>
 	</div>
 </div>

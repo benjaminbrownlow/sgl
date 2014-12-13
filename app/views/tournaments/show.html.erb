@@ -1,22 +1,20 @@
-<div class="col-sm-10 col-sm-offset-1 landing">
-	<div style=" height: 400px; margin-top:20px">
-		<%= image_tag @tournament.image.url, :style => 'display: block; width: 400px; height: auto; margin-left: auto; margin-right: auto;' %>
-	</div>
+<div class="container banner">
+	<%= image_tag @tournament.image.url %>
+</div>
 
+<div class="col-sm-10 col-sm-offset-1 landing">
 	<h1><%= @tournament.title %></h1>
 	<h2><strong><%= @tournament.gameDate.strftime('%A, %b %d') %></strong></h2>
-	
-	
 	<h3><%= @tournament.description %></h3>
 
 	<% if player_signed_in? && current_player.try(:admin?)%>
-		<button><%= link_to 'Edit This Tournament', edit_tournament_path(@tournament) %></button>
+		<button class="full"><%= link_to 'Edit This Tournament', edit_tournament_path(@tournament) %></button>
 
 	<% elsif @tournament.signUpDate.past? %>
 
 	<% else %>
 		<h2>Sign up by <%= @tournament.signUpDate.strftime('%A, %b %d') %></h2>
-		<button>
+		<button class="full">
 			<%= link_to 'Join This Tournament', activities_path(:tournament_id => @tournament), :method => :post %>
 		</button>
 	<% end %>
@@ -24,16 +22,17 @@
 	<% if @tournament.winner? %>
 		<h1>Winner: <%= @tournament.winner %></h1>
 	<% end %>
-
 </div>
 
-<% if @match.any? && @tournament.signUpDate.past? %>
-	<%= render 'brackets/matches' %>
-<% elsif @activities.any? %>
-	<div class="col-sm-10 col-sm-offset-1 landing">	
-		<h1>Upcoming Players</h1>
-		<% @activities.each do |activity| %>
-			<%= link_to activity.player.evetag, profile_path(activity.player) %> <br>
-		<% end %>		
-	</div>
-<% end %>
+<div class="col-sm-10 col-sm-offset-1 landing">
+	<% if @match.any? && @tournament.signUpDate.past? %>
+		<%= render 'brackets/matches' %>
+	<% elsif @activities.any? %>
+		<div class="col-sm-10 col-sm-offset-1 landing">	
+			<h1>Upcoming Players</h1>
+			<% @activities.each do |activity| %>
+				<%= link_to activity.player.evetag, profile_path(activity.player) %> <br>
+			<% end %>		
+		</div>
+	<% end %>
+</div>

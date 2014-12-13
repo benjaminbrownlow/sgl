@@ -5,8 +5,7 @@
 			<li><strong><%= link_to activity.tournament.title, activity.tournament %></strong> | <%= link_to 'Back Out', activity, :method => :delete %></li>
 		<% end %>
 		</ul>
-	
-		<h2>MATCHES</h2>
+		<!-- <h2>MATCHES</h2> -->
 		<ul>
 			<% @matches.each do |match| 
 				 	@players = match.player_ids 

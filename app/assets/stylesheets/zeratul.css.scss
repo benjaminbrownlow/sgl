@@ -53,7 +53,7 @@ body {
 nav {
 	padding: 10px;
 	text-align: right; 
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	ul, li {
 		display: inline;
 	}
@@ -100,8 +100,6 @@ h1 {
 	text-transform: uppercase;
 }
 
-
-
 button, input[type="submit"] {
 	background-color: $green;
 	border: none;
@@ -110,7 +108,13 @@ button, input[type="submit"] {
 	margin: 20px auto;
 	padding: 10px 40px;
 	display: block;
-	min-width: 500px;
+	.full {
+		min-width: 500px;	
+	}
+	.small {
+		margin: 0px;
+		padding: 5px 20px;
+	}
 }
 
 $backgroundBlue: rgba(49, 61, 68, 0.6);
@@ -131,7 +135,6 @@ input:-webkit-autofill {
 
 }
 
-
 input, select, textarea{
     color: #fff;
     //text-transform: uppercase;
@@ -144,6 +147,10 @@ textarea:focus, input:focus {
 
 
 ////////////////////////////////////
+
+.flash {
+	min-height: 50px;
+}
 
 .landing, {
 	text-align: center;
@@ -191,21 +198,74 @@ textarea:focus, input:focus {
 }
 
 
+// TOURNAMENTS
+
+td {
+	border-top: none !important;
+}
+
+.banner {
+	overflow: hidden;
+	max-height: 400px;
+	img {
+		display: block;
+		width: 100%;
+		height: auto
+	}
+}
+
+
+// BRACKETS
+
+.bracket {
+	h1 {
+		text-align: center;
+	}
+}
+
+
 // MATCHES
+
+.main {
+
+}
 
 .match {
 	height: 220px;
-	margin: 20px 0px;
-	padding: 20px 0px;
-	h2 {
-		line-height: 4;
+	margin-bottom: 20px;
+	.date {
+		height: 100%;
+		width: 25%;
+		float: left;
+		h2	{
+			margin-top: 30%;
+		}
 	}
-	h3 {
-		margin-top: -40px;
+
+	.players {
+		margin-right:-50px;
+		height: 100%;
+		width: 75%;
+		float: right;
 	}
-	img {
+
+	.player {
+		width: 33%;
+		height: 100%;
+		margin: 0 20px;
 		display: block;
-		margin: 10px auto;
+		float: left;
+		img {
+			display: block;
+			margin: 10px auto;
+		}
+	}
+
+	.vs {
+		float: left;
+		h2 {
+			line-height: 170px;
+		}
 	}
 }
 

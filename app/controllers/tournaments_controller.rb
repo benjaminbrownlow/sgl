@@ -118,13 +118,15 @@ class TournamentsController < ApplicationController
     @bracket.save
 
     @check = Match.where(bracket_id:@bracket)
+    @checkMatch = @bracket_last.matches.last
 
     @total.times do
       @match = @bracket.matches.build 
       @gamers = @winners.sample(2)
       @match.player_ids = @gamers
       if @check.last.blank?
-        @match.matchDate = @tournament.gameDate
+        # Revisit
+        @match.matchDate = @checkMatch.matchDate + 1.hour
         @match.count = 1
       else
         @match.matchDate = @check.last.matchDate + 15.minutes
