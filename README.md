@@ -3,5 +3,5 @@
 
 ### Developer Notes
 
-Activities - Players joining a tournament
+
 
