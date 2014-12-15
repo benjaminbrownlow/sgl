@@ -30,9 +30,6 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.new(tournament_params)
     @bracket = @tournament.brackets.build(params[:bracket])
     if @tournament.save
-      @bracket = Bracket.last
-      @bracket.count = 1
-      @bracket.save
       redirect_to @tournament, notice: 'Tournament created'
     else
       redirect_to @tournament, notice: 'Error'

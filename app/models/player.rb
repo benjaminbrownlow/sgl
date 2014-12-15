@@ -15,7 +15,6 @@ class Player < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def match
-    # Match.where('player_ids @> ARRAY[?]', id).first
     Match.where('player_ids @> ARRAY[?]', id).all
   end
   
