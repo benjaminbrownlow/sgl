@@ -1,7 +1,8 @@
 
 	<div id="playerProfile" class=" col-sm-3 col-sm-offset-1">
-		<%= image_tag("avatar01.png") %>
-		<h3><%= @player.evetag %></h3>
+		<div class="avatar">
+			<%= image_tag(@player.avatar.url(:medium)) %>
+		</div>
 	</div>
 
 	<div class=" col-sm-7 col-sm-offset-1 playerStats">
