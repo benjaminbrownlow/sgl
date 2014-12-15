@@ -17,14 +17,29 @@ class MatchesController < ApplicationController
 	def player_win
 		@player = current_player
 		@match = Match.find(params[:id])
+		@players = @match.player_ids
+		# Find opponent ID
+		@players.each do |id|
+			if id != @player.id
+				@opponentId = id
+			end
+		end
+		@opponent = Player.find_by(id: @opponentId)
 		if @match.winner.nil?
+			# Set match Winner
 			@match.winner = @player.evetag
 			@match.save
+			# Set Winner Win
+			@player.totalWins = @player.totalWins.next
+			@player.save
+			# Set Opponent Loss
+			@opponent.totalLoss = @opponent.totalLoss.next
+			@opponent.save
 			redirect_to root_path
 		else
 			@match.flag = true
 			@match.save
-			redirect_to root_path, notice: "The winner of this match has already been declared. If this is an error, please contact Sovereign Gaming League."
+			redirect_to root_path, notice: "The winner of this match has already been declared. If this is an error, please contact SGL."
 		end
 	end
 
@@ -32,15 +47,26 @@ class MatchesController < ApplicationController
 		@player = current_player
 		@match = Match.find(params[:id])
 		@players = @match.player_ids
+		# Find opponent ID
 		@players.each do |id|
 			if id != @player.id
 				@opponentId = id
 			end
 		end
-		@opponent = Player.find_by(id: @opponentId).evetag
+		@opponent = Player.find_by(id: @opponentId)
 		if @match.winner.nil?
-			@match.winner = @opponent
+			# Set match Winner
+			@match.winner = @opponent.evetag
 			@match.save
+
+			# Set Match Winner Win
+			@opponent.totalWins = @player.totalWins.next
+			@opponent.save
+
+			# Set Current Player Loss
+			@player.totalLoss = @player.totalLoss.next
+			@player.save
+
 			redirect_to root_path
 		else
 			@match.flag = true

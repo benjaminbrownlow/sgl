@@ -68,10 +68,13 @@ class TournamentsController < ApplicationController
     @check = Match.where(bracket_id:@bracket)
 
     # Take 2 players and create a match
+
     @total.times do
       @match = @bracket.matches.build 
       @gamers = @players.sample(2)
       @match.player_ids = @gamers
+
+      # Set match time and count
       if @check.last.blank?
         @match.matchDate = @tournament.gameDate
         @match.count = 1
@@ -79,6 +82,15 @@ class TournamentsController < ApplicationController
         @match.matchDate = @check.last.matchDate + 15.minutes
         @match.count = @check.last.count.next
       end
+
+      # Update all players' total games
+      @gamers.each do |gamer|
+        player = Player.find(gamer)
+        player.totalGames = player.totalGames.next
+        player.save
+      end
+
+      # Commit and clean up
       @match.save
       @gamers.each do |gamer|
         @players.delete(gamer)
