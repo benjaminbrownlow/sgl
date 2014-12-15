@@ -1,5 +1,5 @@
 <div class="avatar">
-	<%= image_tag(@player.avatar.url) %>
+	<%= image_tag(@player.avatar.url(:medium)) %>
 </div>
 <h3><%= @player.evetag %></h3>
 <%= link_to 'Edit Profile', edit_player_registration_path %>

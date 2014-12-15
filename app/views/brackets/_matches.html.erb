@@ -15,14 +15,14 @@
 					</div>
 					<div class="players">
 						<div class="player">
-							<%= link_to image_tag('avatar01.png'), profile_path(@playerone) %>
+							<%= link_to image_tag(@playerone.avatar.url(:medium), class: 'avatar'), profile_path(@playerone) %>
 							<%= link_to @playerone.evetag, profile_path(@playerone) %>
 						</div>
 						<div class="vs">
 							<h2>vs</h2>
 						</div>
 						<div class="player">
-							<%= link_to image_tag('avatar01.png'), profile_path(@playertwo) %>
+							<%= link_to image_tag(@playertwo.avatar.url(:medium), class: 'avatar'), profile_path(@playertwo) %>
 							<%= link_to @playertwo.evetag, profile_path(@playertwo)%>
 						</div>
 					</div>
