@@ -168,6 +168,19 @@ textarea:focus, input:focus {
 	}
 }
 
+.avatar {
+	display: block;
+	margin: 0 auto;
+	border: 3px solid $green;
+	border-radius: 50%;
+	height: 165px;
+	width: 165px;	
+	overflow: hidden;
+	img {
+
+	}
+}
+
 .playerStats {
 	text-align: center;
 	margin-bottom: 20px;

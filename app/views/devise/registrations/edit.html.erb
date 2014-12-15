@@ -4,6 +4,11 @@
   <%= devise_error_messages! %>
 
   <div>
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div>
     <%= f.label :name %><br />
     <%= current_player.name %><br />
   </div>
