@@ -27,6 +27,7 @@ gem 'aws-sdk'
 gem 'pg'
 gem 'unicorn'
 gem 'thin'
+gem 'protected_attributes'
 
 
 group :development, :test do
