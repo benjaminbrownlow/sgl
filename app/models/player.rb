@@ -1,6 +1,7 @@
 class Player < ActiveRecord::Base
 	validates :email, presence: true, uniqueness: true
 	validates :evetag, presence: true, uniqueness: true
+  attr_accessible :avatar, :email
 
 	has_many :activities
 	has_many :tournaments, through: :activities
@@ -14,7 +15,7 @@ class Player < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :avatar_file_name
+
 
   has_attached_file :avatar, :styles => { :medium => "165x165#", :thumb => "100x100#" }, :default_url => "/assets/medium/default.png"
   validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png"]
