@@ -1,5 +1,7 @@
 <div class=" col-sm-12 landing">
-	<% unless @tournament.nil? %>
+	<% if @tournament.nil? %>
+		<h1>Tournmnaments Coming Soon</h1>
+	<% else %>
 		<div class="banner">
 			<%= image_tag @tournament.image.url %>
 		</div>		
