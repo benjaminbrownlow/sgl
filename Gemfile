@@ -26,7 +26,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'pg'
 gem 'unicorn'
-gem 'thin'
+# gem 'thin'
 # gem 'protected_attributes'
 
 

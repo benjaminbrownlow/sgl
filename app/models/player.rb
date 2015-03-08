@@ -1,7 +1,7 @@
 class Player < ActiveRecord::Base
 	validates :email, presence: true, uniqueness: true
 	validates :evetag, presence: true, uniqueness: true
-  attr_accessible :avatar, :email
+  # attr_accessible :avatar, :email
 
 	has_many :activities
 	has_many :tournaments, through: :activities
